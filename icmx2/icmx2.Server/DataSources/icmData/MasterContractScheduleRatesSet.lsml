@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="MasterContractScheduleRatesSet">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="PositionTitle"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PositionDescription"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="3000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PositionIDCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY13Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY14Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY15Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY16Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY17Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY18Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY19Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY20Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY21Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY22Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY23Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FY24Rate"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="LaborCategories"
+        Association="LaborCategory_MasterContractScheduleRates"
+        FromEnd="MasterContractScheduleRatesSet"
+        ToEnd="LaborCategories" />
+      <NavigationProperty
+        Name="MasterContract"
+        Association="MasterContractScheduleRates_MasterContract"
+        FromEnd="MasterContractScheduleRatesSet"
+        ToEnd="MasterContracts" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="LaborCategory_MasterContractScheduleRates">
+    <AssociationEnd
+      Name="MasterContractScheduleRatesSet"
+      EntityType="MasterContractScheduleRatesSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LaborCategories"
+      Multiplicity="Many"
+      EntityType="LaborCategory" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="MasterContractScheduleRatesSet"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="MasterContractScheduleRatesSet" />
+    <AssociationSet
+      Name="LaborCategory_MasterContractScheduleRates"
+      Association="LaborCategory_MasterContractScheduleRates">
+      <AssociationSetEnd
+        Name="MasterContractScheduleRatesSet"
+        EntitySet="MasterContractScheduleRatesSet" />
+      <AssociationSetEnd
+        Name="LaborCategories"
+        EntitySet="LaborCategories" />
+    </AssociationSet>
+    <QueryOperation
+      Name="MasterContractScheduleRatesSet_Single"
+      ReturnType="MasterContractScheduleRatesSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MasterContractScheduleRatesSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="MasterContractScheduleRatesSet_SingleOrDefault"
+      ReturnType="MasterContractScheduleRatesSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MasterContractScheduleRatesSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="MasterContractScheduleRatesSet">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="MasterContractScheduleRatesSet" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="MasterContractScheduleRatesSet/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PositionTitle"
+          Nullable="False"
+          Type="nvarchar"
+          Property="MasterContractScheduleRatesSet/Properties[PositionTitle]" />
+        <SsdlProperty
+          MaxLength="3000"
+          Name="PositionDescription"
+          Nullable="False"
+          Type="nvarchar"
+          Property="MasterContractScheduleRatesSet/Properties[PositionDescription]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PositionIDCode"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContractScheduleRatesSet/Properties[PositionIDCode]" />
+        <SsdlProperty
+          Name="FY13Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY13Rate]" />
+        <SsdlProperty
+          Name="FY14Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY14Rate]" />
+        <SsdlProperty
+          Name="FY15Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY15Rate]" />
+        <SsdlProperty
+          Name="FY16Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY16Rate]" />
+        <SsdlProperty
+          Name="FY17Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY17Rate]" />
+        <SsdlProperty
+          Name="FY18Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY18Rate]" />
+        <SsdlProperty
+          Name="FY19Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY19Rate]" />
+        <SsdlProperty
+          Name="FY20Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY20Rate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContractScheduleRatesSet/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="MasterContractScheduleRatesSet/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContractScheduleRatesSet/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="MasterContractScheduleRatesSet/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="MasterContractScheduleRatesSet/Properties[RowVersion]" />
+        <SsdlProperty
+          Name="FY21Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY21Rate]" />
+        <SsdlProperty
+          Name="FY22Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY22Rate]" />
+        <SsdlProperty
+          Name="FY23Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY23Rate]" />
+        <SsdlProperty
+          Name="FY24Rate"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="MasterContractScheduleRatesSet/Properties[FY24Rate]" />
+        <SsdlForeignKeyProperty
+          Name="MasterContractScheduleRates_MasterContract"
+          Nullable="False"
+          Type="int"
+          PropertyName="MasterContractScheduleRates_MasterContract" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="LaborCategory_MasterContractScheduleRates">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LaborCategory_MasterContractScheduleRates" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategory_MasterContractScheduleRates]/Members[MasterContractScheduleRatesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategory_MasterContractScheduleRates]/Members[LaborCategories]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LaborCategory_MasterContractScheduleRates" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

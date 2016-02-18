@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="CompaniesSet">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Street1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Street2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Street3"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="State"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Zip"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MainNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Email"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WebLink"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CompanyAssignments"
+        Association="CompanyAssignment_Companies"
+        FromEnd="CompaniesSet"
+        ToEnd="CompanyAssignments" />
+      <NavigationProperty
+        Name="CompanyCompetitionClassifications"
+        Association="CompanyCompetitionClassificati_Companies"
+        FromEnd="CompaniesSet"
+        ToEnd="CompanyCompetitionClassifications" />
+      <NavigationProperty
+        Name="PeopleSet"
+        Association="People_Companies"
+        FromEnd="CompaniesSet"
+        ToEnd="PeopleSet" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="CompanyAssignment_Companies">
+    <AssociationEnd
+      Name="CompaniesSet"
+      Multiplicity="One"
+      EntityType="CompaniesSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CompanyAssignments"
+      Multiplicity="Many"
+      EntityType="CompanyAssignment" />
+  </Association>
+  <Association
+    Name="CompanyCompetitionClassificati_Companies">
+    <AssociationEnd
+      Name="CompaniesSet"
+      Multiplicity="One"
+      EntityType="CompaniesSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CompanyCompetitionClassifications"
+      Multiplicity="Many"
+      EntityType="CompanyCompetitionClassification" />
+  </Association>
+  <Association
+    Name="People_Companies">
+    <AssociationEnd
+      Name="CompaniesSet"
+      EntityType="CompaniesSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="PeopleSet"
+      Multiplicity="Many"
+      EntityType="PeopleSet" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="CompaniesSet"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CompaniesSet" />
+    <AssociationSet
+      Name="CompanyAssignment_Companies"
+      Association="CompanyAssignment_Companies">
+      <AssociationSetEnd
+        Name="CompaniesSet"
+        EntitySet="CompaniesSet" />
+      <AssociationSetEnd
+        Name="CompanyAssignments"
+        EntitySet="CompanyAssignments" />
+    </AssociationSet>
+    <AssociationSet
+      Name="CompanyCompetitionClassificati_Companies"
+      Association="CompanyCompetitionClassificati_Companies">
+      <AssociationSetEnd
+        Name="CompaniesSet"
+        EntitySet="CompaniesSet" />
+      <AssociationSetEnd
+        Name="CompanyCompetitionClassifications"
+        EntitySet="CompanyCompetitionClassifications" />
+    </AssociationSet>
+    <AssociationSet
+      Name="People_Companies"
+      Association="People_Companies">
+      <AssociationSetEnd
+        Name="CompaniesSet"
+        EntitySet="CompaniesSet" />
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+    </AssociationSet>
+    <QueryOperation
+      Name="CompaniesSet_Single"
+      ReturnType="CompaniesSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CompaniesSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CompaniesSet_SingleOrDefault"
+      ReturnType="CompaniesSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CompaniesSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="CompaniesSet">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="CompaniesSet" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="CompaniesSet/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Title"
+          Nullable="False"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Street1"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Street1]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Street2"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Street2]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Street3"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Street3]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="City"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[City]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="State"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[State]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Zip"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Zip]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MainNumber"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[MainNumber]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Fax"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Fax]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Email"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[Email]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="WebLink"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[WebLink]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="CompaniesSet/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CompaniesSet/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="CompaniesSet/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="CompaniesSet/Properties[RowVersion]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="CompanyAssignment_Companies">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="CompanyAssignment_Companies" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CompanyAssignment_Companies]/Members[CompaniesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CompanyAssignment_Companies]/Members[CompanyAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContractVendorAssignment_Companies" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="CompanyCompetitionClassificati_Companies">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="CompanyCompetitionClassificati_Companies" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CompanyCompetitionClassificati_Companies]/Members[CompaniesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CompanyCompetitionClassificati_Companies]/Members[CompanyCompetitionClassifications]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CompanyCompetitionClassificati_Companies" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="People_Companies">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="People_Companies" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[People_Companies]/Members[CompaniesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[People_Companies]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="People_Companies" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

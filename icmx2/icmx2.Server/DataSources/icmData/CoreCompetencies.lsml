@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="CoreCompetency">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="128" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Contracts"
+        Association="Contract_CoreCompetency"
+        FromEnd="CoreCompetencies"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="Contracts1"
+        Association="Contract_CoreCompetency1"
+        FromEnd="CoreCompetencies"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="Contracts2"
+        Association="Contract_CoreCompetency2"
+        FromEnd="CoreCompetencies"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="Contracts3"
+        Association="Contract_CoreCompetency3"
+        FromEnd="CoreCompetencies"
+        ToEnd="Contracts" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Contract_CoreCompetency">
+    <AssociationEnd
+      Name="CoreCompetencies"
+      EntityType="CoreCompetency">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <Association
+    Name="Contract_CoreCompetency1">
+    <AssociationEnd
+      Name="CoreCompetencies"
+      EntityType="CoreCompetency">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <Association
+    Name="Contract_CoreCompetency2">
+    <AssociationEnd
+      Name="CoreCompetencies"
+      EntityType="CoreCompetency">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <Association
+    Name="Contract_CoreCompetency3">
+    <AssociationEnd
+      Name="CoreCompetencies"
+      EntityType="CoreCompetency">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="CoreCompetencies"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CoreCompetency" />
+    <AssociationSet
+      Name="Contract_CoreCompetency"
+      Association="Contract_CoreCompetency">
+      <AssociationSetEnd
+        Name="CoreCompetencies"
+        EntitySet="CoreCompetencies" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Contract_CoreCompetency1"
+      Association="Contract_CoreCompetency1">
+      <AssociationSetEnd
+        Name="CoreCompetencies"
+        EntitySet="CoreCompetencies" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Contract_CoreCompetency2"
+      Association="Contract_CoreCompetency2">
+      <AssociationSetEnd
+        Name="CoreCompetencies"
+        EntitySet="CoreCompetencies" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Contract_CoreCompetency3"
+      Association="Contract_CoreCompetency3">
+      <AssociationSetEnd
+        Name="CoreCompetencies"
+        EntitySet="CoreCompetencies" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <QueryOperation
+      Name="CoreCompetencies_Single"
+      ReturnType="CoreCompetency">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CoreCompetencies" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CoreCompetencies_SingleOrDefault"
+      ReturnType="CoreCompetency">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CoreCompetencies" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="CoreCompetencies">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="CoreCompetencies" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="CoreCompetency/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="128"
+          Name="Title"
+          Nullable="False"
+          Type="nvarchar"
+          Property="CoreCompetency/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Description"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CoreCompetency/Properties[Description]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CoreCompetency/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="CoreCompetency/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="CoreCompetency/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="CoreCompetency/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="CoreCompetency/Properties[RowVersion]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_CoreCompetency">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_CoreCompetency" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency]/Members[CoreCompetencies]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_CoreCompetency" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_CoreCompetency1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_CoreCompetency1" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency1]/Members[CoreCompetencies]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency1]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_CoreCompetency1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_CoreCompetency2">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_CoreCompetency2" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency2]/Members[CoreCompetencies]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency2]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_CoreCompetency2" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_CoreCompetency3">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_CoreCompetency3" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency3]/Members[CoreCompetencies]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_CoreCompetency3]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_CoreCompetency3" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

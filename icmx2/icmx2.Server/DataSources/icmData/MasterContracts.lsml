@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="MasterContract">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContractNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AvailableTo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Services"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="2000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Contracts"
+        Association="Contract_MasterContract"
+        FromEnd="MasterContracts"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="LaborCategories"
+        Association="LaborCategory_MasterContract"
+        FromEnd="MasterContracts"
+        ToEnd="LaborCategories" />
+      <NavigationProperty
+        Name="MasterContractScheduleRatesSet"
+        Association="MasterContractScheduleRates_MasterContract"
+        FromEnd="MasterContracts"
+        ToEnd="MasterContractScheduleRatesSet" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Contract_MasterContract">
+    <AssociationEnd
+      Name="MasterContracts"
+      EntityType="MasterContract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <Association
+    Name="LaborCategory_MasterContract">
+    <AssociationEnd
+      Name="MasterContracts"
+      EntityType="MasterContract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LaborCategories"
+      Multiplicity="Many"
+      EntityType="LaborCategory" />
+  </Association>
+  <Association
+    Name="MasterContractScheduleRates_MasterContract">
+    <AssociationEnd
+      Name="MasterContracts"
+      Multiplicity="One"
+      EntityType="MasterContract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MasterContractScheduleRatesSet"
+      Multiplicity="Many"
+      EntityType="MasterContractScheduleRatesSet" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="MasterContracts"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="MasterContract" />
+    <AssociationSet
+      Name="Contract_MasterContract"
+      Association="Contract_MasterContract">
+      <AssociationSetEnd
+        Name="MasterContracts"
+        EntitySet="MasterContracts" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet
+      Name="LaborCategory_MasterContract"
+      Association="LaborCategory_MasterContract">
+      <AssociationSetEnd
+        Name="MasterContracts"
+        EntitySet="MasterContracts" />
+      <AssociationSetEnd
+        Name="LaborCategories"
+        EntitySet="LaborCategories" />
+    </AssociationSet>
+    <AssociationSet
+      Name="MasterContractScheduleRates_MasterContract"
+      Association="MasterContractScheduleRates_MasterContract">
+      <AssociationSetEnd
+        Name="MasterContracts"
+        EntitySet="MasterContracts" />
+      <AssociationSetEnd
+        Name="MasterContractScheduleRatesSet"
+        EntitySet="MasterContractScheduleRatesSet" />
+    </AssociationSet>
+    <QueryOperation
+      Name="MasterContracts_Single"
+      ReturnType="MasterContract">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MasterContracts" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="MasterContracts_SingleOrDefault"
+      ReturnType="MasterContract">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MasterContracts" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="MasterContracts">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="MasterContracts" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="MasterContract/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Title"
+          Nullable="False"
+          Type="nvarchar"
+          Property="MasterContract/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ContractNumber"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContract/Properties[ContractNumber]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="AvailableTo"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContract/Properties[AvailableTo]" />
+        <SsdlProperty
+          MaxLength="2000"
+          Name="Services"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContract/Properties[Services]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContract/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="MasterContract/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MasterContract/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="MasterContract/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="MasterContract/Properties[RowVersion]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_MasterContract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_MasterContract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_MasterContract]/Members[MasterContracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_MasterContract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_MasterContract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LaborCategory_MasterContract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LaborCategory_MasterContract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategory_MasterContract]/Members[MasterContracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategory_MasterContract]/Members[LaborCategories]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LaborCategory_MasterContract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="MasterContractScheduleRates_MasterContract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="MasterContractScheduleRates_MasterContract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[MasterContractScheduleRates_MasterContract]/Members[MasterContracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[MasterContractScheduleRates_MasterContract]/Members[MasterContractScheduleRatesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MasterContractScheduleRates_MasterContract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="LaborCategory">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="3000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Rate"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Discount"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Key_Staff"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Number_Of_FTE"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="FiscalsYearsSet"
+        Association="FiscalsYears_LaborCategory"
+        FromEnd="LaborCategories"
+        ToEnd="FiscalsYearsSet" />
+      <NavigationProperty
+        Name="Contract"
+        Association="LaborCategory_Contract"
+        FromEnd="LaborCategories"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="MasterContract"
+        Association="LaborCategory_MasterContract"
+        FromEnd="LaborCategories"
+        ToEnd="MasterContracts" />
+      <NavigationProperty
+        Name="MasterContractScheduleRatesSet"
+        Association="LaborCategory_MasterContractScheduleRates"
+        FromEnd="LaborCategories"
+        ToEnd="MasterContractScheduleRatesSet" />
+      <NavigationProperty
+        Name="SecurityClassification"
+        Association="LaborCategory_SecurityClassification"
+        FromEnd="LaborCategories"
+        ToEnd="SecurityClassifications" />
+      <NavigationProperty
+        Name="LaborCategoryAssignmentsSet"
+        Association="LaborCategoryAssignments_LaborCategory"
+        FromEnd="LaborCategories"
+        ToEnd="LaborCategoryAssignmentsSet" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="LaborCategoryAssignments_LaborCategory">
+    <AssociationEnd
+      Name="LaborCategories"
+      Multiplicity="One"
+      EntityType="LaborCategory">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LaborCategoryAssignmentsSet"
+      Multiplicity="Many"
+      EntityType="LaborCategoryAssignmentsSet" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="LaborCategories"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="LaborCategory" />
+    <AssociationSet
+      Name="LaborCategoryAssignments_LaborCategory"
+      Association="LaborCategoryAssignments_LaborCategory">
+      <AssociationSetEnd
+        Name="LaborCategories"
+        EntitySet="LaborCategories" />
+      <AssociationSetEnd
+        Name="LaborCategoryAssignmentsSet"
+        EntitySet="LaborCategoryAssignmentsSet" />
+    </AssociationSet>
+    <QueryOperation
+      Name="LaborCategories_Single"
+      ReturnType="LaborCategory">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LaborCategories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="LaborCategories_SingleOrDefault"
+      ReturnType="LaborCategory">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LaborCategories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="LaborCategories">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="LaborCategories" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="LaborCategory/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Title"
+          Nullable="False"
+          Type="nvarchar"
+          Property="LaborCategory/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="3000"
+          Name="Description"
+          Nullable="False"
+          Type="nvarchar"
+          Property="LaborCategory/Properties[Description]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Rate"
+          Nullable="True"
+          Type="nvarchar"
+          Property="LaborCategory/Properties[Rate]" />
+        <SsdlProperty
+          Name="Discount"
+          Nullable="True"
+          Scale="9"
+          Type="decimal"
+          Property="LaborCategory/Properties[Discount]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="LaborCategory/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="LaborCategory/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="LaborCategory/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="LaborCategory/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="LaborCategory/Properties[RowVersion]" />
+        <SsdlProperty
+          Name="Key_Staff"
+          Nullable="True"
+          Type="bit"
+          Property="LaborCategory/Properties[Key_Staff]" />
+        <SsdlProperty
+          Name="Number_Of_FTE"
+          Nullable="True"
+          Scale="2"
+          Type="numeric"
+          Property="LaborCategory/Properties[Number_Of_FTE]" />
+        <SsdlForeignKeyProperty
+          Name="FiscalsYears_LaborCategory"
+          Nullable="True"
+          Type="int"
+          PropertyName="FiscalsYears_LaborCategory" />
+        <SsdlForeignKeyProperty
+          Name="LaborCategory_Contract"
+          Nullable="False"
+          Type="int"
+          PropertyName="LaborCategory_Contract" />
+        <SsdlForeignKeyProperty
+          Name="LaborCategory_MasterContract"
+          Nullable="True"
+          Type="int"
+          PropertyName="LaborCategory_MasterContract" />
+        <SsdlForeignKeyProperty
+          Name="LaborCategory_MasterContractScheduleRates"
+          Nullable="True"
+          Type="int"
+          PropertyName="LaborCategory_MasterContractScheduleRates" />
+        <SsdlForeignKeyProperty
+          Name="LaborCategory_SecurityClassification"
+          Nullable="True"
+          Type="int"
+          PropertyName="LaborCategory_SecurityClassification" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="LaborCategoryAssignments_LaborCategory">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LaborCategoryAssignments_LaborCategory" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategoryAssignments_LaborCategory]/Members[LaborCategories]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategoryAssignments_LaborCategory]/Members[LaborCategoryAssignmentsSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LaborCategoryAssignments_LaborCategory" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

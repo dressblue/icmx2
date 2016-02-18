@@ -1,0 +1,2487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Contract">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Number"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContractNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ShortDescription"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LongDescription"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AwardDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StartDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EndDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TCV"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Order"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Sales"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ResponseDueDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PlaceOfPerformance"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RFPDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="GovWinLink"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WebLink1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WebLink2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CaptureNotes"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="3900" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnticipatedValue"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PotentialWinPercentage"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NormalizedAnticipatedValue"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CorporateBrandIntimacy"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CorporateTeamExperience"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Staffing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QualifiedSolution"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Price"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ScoringSubTotal"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostAwardAmount"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostAwardDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostIntimacy"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostUnderstanding"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostSolution"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostPricing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostStaffing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostExperience"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostLessonsLearned"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="4000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Protest"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProtestDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProtestUpheld"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProtestResolutionDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProtestNotes"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="4000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IntimacyKnowUs"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IntimacyThinkOfUs"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IntimacyPerceivedPerformance"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IntimacyMetEvaluators"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IntimacyMetCO"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IntimacyMetInfluencers"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnderstandingRequirement"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnderstandingExperience"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnderstandingRisk"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UnderstandingMitigations"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SolutionVetted"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SolutionViable"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SolutionManagementViable"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SolutionTechnicalViable"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PriceUnderstanding"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PriceToWinAnalysis"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PriceUnderstandTrends"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PriceBestValue"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PriceWinningStrategy"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StaffingQualifiedAndAvailable"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StaffingCustomerKnowIndividuals"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StaffingHaveRequiredTraining"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StaffingHaveRequiredCertifications"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExperienceSuccessfulPastPerformance"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExperienceCorporateQualifications"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExperienceCertifications"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExperienceQualityAssurancePlans"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scoreIntimacy"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentIntimacy"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scoreUnderstanding"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentUnderstanding"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scoreSolution"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentSolution"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scorePricing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentPricing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scoreStaffing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentStaffing"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scoreExperience"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentExperience"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="scoreOverall"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="percentOverall"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalIntimacy"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalUnderstanding"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalSolution"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalPricing"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalStaffing"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalExperience"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FinalTotal"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="25"
+            Scale="15" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DraftRFPDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QADueDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SourcesSourghtRFIResponseDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OralsRequired"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OralsDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NumberOfBids"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PeriodOfPerformance"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TotalContractValue"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FundedContractValue"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EffectiveDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MasterPK"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CorporatePrime"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnticipatedNumberFTE"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gate1Review"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gate2Review"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gate3Review"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gate1Completed"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gate2Completed"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Gate3Completed"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="xG1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="xG2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="xG3"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="xPrime"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ActionItemsSet"
+        Association="ActionItems_Contract"
+        FromEnd="Contracts"
+        ToEnd="ActionItemsSet" />
+      <NavigationProperty
+        Name="ChargeCodesSet"
+        Association="ChargeCodes_Contract"
+        FromEnd="Contracts"
+        ToEnd="ChargeCodesSet" />
+      <NavigationProperty
+        Name="CitationAssignments"
+        Association="CitationAssignment_Contract"
+        FromEnd="Contracts"
+        ToEnd="CitationAssignments" />
+      <NavigationProperty
+        Name="ClientAgencyAssignmentsSet"
+        Association="ClientAgencyAssignments_Contract"
+        FromEnd="Contracts"
+        ToEnd="ClientAgencyAssignmentsSet" />
+      <NavigationProperty
+        Name="CompanyAssignments"
+        Association="CompanyAssignment_Contract"
+        FromEnd="Contracts"
+        ToEnd="CompanyAssignments" />
+      <NavigationProperty
+        Name="AwardTypesSet"
+        Association="Contract_AwardTypes"
+        FromEnd="Contracts"
+        ToEnd="AwardTypesSet" />
+      <NavigationProperty
+        Name="ChargeCodesSet1"
+        Association="Contract_ChargeCodes"
+        FromEnd="Contracts"
+        ToEnd="ChargeCodesSet" />
+      <NavigationProperty
+        Name="ClientAgenciesSet"
+        Association="Contract_client"
+        FromEnd="Contracts"
+        ToEnd="ClientAgenciesSet" />
+      <NavigationProperty
+        Name="CompetitionClassificationsSet"
+        Association="Contract_CompetitionClassifications"
+        FromEnd="Contracts"
+        ToEnd="CompetitionClassificationsSet" />
+      <NavigationProperty
+        Name="ContractStatusSet"
+        Association="Contract_ContractStatus"
+        FromEnd="Contracts"
+        ToEnd="ContractStatusSet" />
+      <NavigationProperty
+        Name="ContractType"
+        Association="Contract_ContractType"
+        FromEnd="Contracts"
+        ToEnd="ContractTypes" />
+      <NavigationProperty
+        Name="CoreCompetency"
+        Association="Contract_CoreCompetency"
+        FromEnd="Contracts"
+        ToEnd="CoreCompetencies" />
+      <NavigationProperty
+        Name="CoreCompetency1"
+        Association="Contract_CoreCompetency1"
+        FromEnd="Contracts"
+        ToEnd="CoreCompetencies" />
+      <NavigationProperty
+        Name="CoreCompetency2"
+        Association="Contract_CoreCompetency2"
+        FromEnd="Contracts"
+        ToEnd="CoreCompetencies" />
+      <NavigationProperty
+        Name="CoreCompetency3"
+        Association="Contract_CoreCompetency3"
+        FromEnd="Contracts"
+        ToEnd="CoreCompetencies" />
+      <NavigationProperty
+        Name="MasterContract"
+        Association="Contract_MasterContract"
+        FromEnd="Contracts"
+        ToEnd="MasterContracts" />
+      <NavigationProperty
+        Name="PeopleSet"
+        Association="Contract_People"
+        FromEnd="Contracts"
+        ToEnd="PeopleSet" />
+      <NavigationProperty
+        Name="PeopleSet1"
+        Association="Contract_People1"
+        FromEnd="Contracts"
+        ToEnd="PeopleSet" />
+      <NavigationProperty
+        Name="ContractAccoladesSet"
+        Association="ContractAccolades_Contract"
+        FromEnd="Contracts"
+        ToEnd="ContractAccoladesSet" />
+      <NavigationProperty
+        Name="ContractDocumentsSet"
+        Association="ContractDocuments_Contract"
+        FromEnd="Contracts"
+        ToEnd="ContractDocumentsSet" />
+      <NavigationProperty
+        Name="ContractNotesSet"
+        Association="ContractNotes_Contract"
+        FromEnd="Contracts"
+        ToEnd="ContractNotesSet" />
+      <NavigationProperty
+        Name="EvaluationType"
+        Association="EvaluationType_Contract"
+        FromEnd="Contracts"
+        ToEnd="EvaluationTypes" />
+      <NavigationProperty
+        Name="LaborCategories"
+        Association="LaborCategory_Contract"
+        FromEnd="Contracts"
+        ToEnd="LaborCategories" />
+      <NavigationProperty
+        Name="ManagementPositionAssignments"
+        Association="ManagementPositionAssignment_Contract"
+        FromEnd="Contracts"
+        ToEnd="ManagementPositionAssignments" />
+      <NavigationProperty
+        Name="Modifications"
+        Association="Modification_Contract"
+        FromEnd="Contracts"
+        ToEnd="Modifications" />
+      <NavigationProperty
+        Name="PastPerformances"
+        Association="PastPerformance_Contract"
+        FromEnd="Contracts"
+        ToEnd="PastPerformances" />
+      <NavigationProperty
+        Name="PayeeAssignments"
+        Association="PayeeAssignment_Contract"
+        FromEnd="Contracts"
+        ToEnd="PayeeAssignments" />
+      <NavigationProperty
+        Name="PwinWeightsSet"
+        Association="PwinWeights_Contract"
+        FromEnd="Contracts"
+        ToEnd="PwinWeightsSet" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="ActionItems_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ActionItemsSet"
+      Multiplicity="Many"
+      EntityType="ActionItemsSet" />
+  </Association>
+  <Association
+    Name="CitationAssignment_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CitationAssignments"
+      Multiplicity="Many"
+      EntityType="CitationAssignment" />
+  </Association>
+  <Association
+    Name="ClientAgencyAssignments_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ClientAgencyAssignmentsSet"
+      Multiplicity="Many"
+      EntityType="ClientAgencyAssignmentsSet" />
+  </Association>
+  <Association
+    Name="CompanyAssignment_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CompanyAssignments"
+      Multiplicity="Many"
+      EntityType="CompanyAssignment" />
+  </Association>
+  <Association
+    Name="ContractAccolades_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ContractAccoladesSet"
+      Multiplicity="Many"
+      EntityType="ContractAccoladesSet" />
+  </Association>
+  <Association
+    Name="ContractDocuments_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ContractDocumentsSet"
+      Multiplicity="Many"
+      EntityType="ContractDocumentsSet" />
+  </Association>
+  <Association
+    Name="ContractNotes_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ContractNotesSet"
+      Multiplicity="Many"
+      EntityType="ContractNotesSet" />
+  </Association>
+  <Association
+    Name="LaborCategory_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LaborCategories"
+      Multiplicity="Many"
+      EntityType="LaborCategory" />
+  </Association>
+  <Association
+    Name="ManagementPositionAssignment_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ManagementPositionAssignments"
+      Multiplicity="Many"
+      EntityType="ManagementPositionAssignment" />
+  </Association>
+  <Association
+    Name="Modification_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Modifications"
+      Multiplicity="Many"
+      EntityType="Modification" />
+  </Association>
+  <Association
+    Name="PastPerformance_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="PastPerformances"
+      Multiplicity="Many"
+      EntityType="PastPerformance" />
+  </Association>
+  <Association
+    Name="PayeeAssignment_Contract">
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="One"
+      EntityType="Contract">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="PayeeAssignments"
+      Multiplicity="Many"
+      EntityType="PayeeAssignment" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Contracts"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Contract" />
+    <AssociationSet
+      Name="ActionItems_Contract"
+      Association="ActionItems_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="ActionItemsSet"
+        EntitySet="ActionItemsSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="CitationAssignment_Contract"
+      Association="CitationAssignment_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="CitationAssignments"
+        EntitySet="CitationAssignments" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ClientAgencyAssignments_Contract"
+      Association="ClientAgencyAssignments_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="ClientAgencyAssignmentsSet"
+        EntitySet="ClientAgencyAssignmentsSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="CompanyAssignment_Contract"
+      Association="CompanyAssignment_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="CompanyAssignments"
+        EntitySet="CompanyAssignments" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ContractAccolades_Contract"
+      Association="ContractAccolades_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="ContractAccoladesSet"
+        EntitySet="ContractAccoladesSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ContractDocuments_Contract"
+      Association="ContractDocuments_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="ContractDocumentsSet"
+        EntitySet="ContractDocumentsSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ContractNotes_Contract"
+      Association="ContractNotes_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="ContractNotesSet"
+        EntitySet="ContractNotesSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="LaborCategory_Contract"
+      Association="LaborCategory_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="LaborCategories"
+        EntitySet="LaborCategories" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ManagementPositionAssignment_Contract"
+      Association="ManagementPositionAssignment_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="ManagementPositionAssignments"
+        EntitySet="ManagementPositionAssignments" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Modification_Contract"
+      Association="Modification_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="Modifications"
+        EntitySet="Modifications" />
+    </AssociationSet>
+    <AssociationSet
+      Name="PastPerformance_Contract"
+      Association="PastPerformance_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="PastPerformances"
+        EntitySet="PastPerformances" />
+    </AssociationSet>
+    <AssociationSet
+      Name="PayeeAssignment_Contract"
+      Association="PayeeAssignment_Contract">
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+      <AssociationSetEnd
+        Name="PayeeAssignments"
+        EntitySet="PayeeAssignments" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Contracts_Single"
+      ReturnType="Contract">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Contracts" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Contracts_SingleOrDefault"
+      ReturnType="Contract">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Contracts" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Contracts">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Contracts" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Contract/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Title"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Contract/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Number"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[Number]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ContractNumber"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[ContractNumber]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ShortDescription"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[ShortDescription]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="LongDescription"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[LongDescription]" />
+        <SsdlProperty
+          Name="AwardDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[AwardDate]" />
+        <SsdlProperty
+          Name="StartDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[StartDate]" />
+        <SsdlProperty
+          Name="EndDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[EndDate]" />
+        <SsdlProperty
+          Name="TCV"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[TCV]" />
+        <SsdlProperty
+          Name="Order"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[Order]" />
+        <SsdlProperty
+          Name="Sales"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[Sales]" />
+        <SsdlProperty
+          Name="ResponseDueDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[ResponseDueDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PlaceOfPerformance"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[PlaceOfPerformance]" />
+        <SsdlProperty
+          Name="RFPDate"
+          Nullable="True"
+          Type="date"
+          Property="Contract/Properties[RFPDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="GovWinLink"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[GovWinLink]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="WebLink1"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[WebLink1]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="WebLink2"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[WebLink2]" />
+        <SsdlProperty
+          MaxLength="3900"
+          Name="CaptureNotes"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[CaptureNotes]" />
+        <SsdlProperty
+          Name="AnticipatedValue"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[AnticipatedValue]" />
+        <SsdlProperty
+          Name="PotentialWinPercentage"
+          Nullable="True"
+          Scale="9"
+          Type="decimal"
+          Property="Contract/Properties[PotentialWinPercentage]" />
+        <SsdlProperty
+          Name="NormalizedAnticipatedValue"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[NormalizedAnticipatedValue]" />
+        <SsdlProperty
+          Name="CorporateBrandIntimacy"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[CorporateBrandIntimacy]" />
+        <SsdlProperty
+          Name="CorporateTeamExperience"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[CorporateTeamExperience]" />
+        <SsdlProperty
+          Name="Staffing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[Staffing]" />
+        <SsdlProperty
+          Name="QualifiedSolution"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[QualifiedSolution]" />
+        <SsdlProperty
+          Name="Price"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[Price]" />
+        <SsdlProperty
+          Name="ScoringSubTotal"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[ScoringSubTotal]" />
+        <SsdlProperty
+          Name="PostAwardAmount"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[PostAwardAmount]" />
+        <SsdlProperty
+          Name="PostAwardDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[PostAwardDate]" />
+        <SsdlProperty
+          Name="PostIntimacy"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PostIntimacy]" />
+        <SsdlProperty
+          Name="PostUnderstanding"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PostUnderstanding]" />
+        <SsdlProperty
+          Name="PostSolution"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PostSolution]" />
+        <SsdlProperty
+          Name="PostPricing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PostPricing]" />
+        <SsdlProperty
+          Name="PostStaffing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PostStaffing]" />
+        <SsdlProperty
+          Name="PostExperience"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PostExperience]" />
+        <SsdlProperty
+          Name="PostLessonsLearned"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[PostLessonsLearned]" />
+        <SsdlProperty
+          Name="Protest"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[Protest]" />
+        <SsdlProperty
+          Name="ProtestDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[ProtestDate]" />
+        <SsdlProperty
+          Name="ProtestUpheld"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[ProtestUpheld]" />
+        <SsdlProperty
+          Name="ProtestResolutionDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[ProtestResolutionDate]" />
+        <SsdlProperty
+          Name="ProtestNotes"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[ProtestNotes]" />
+        <SsdlProperty
+          Name="IntimacyKnowUs"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[IntimacyKnowUs]" />
+        <SsdlProperty
+          Name="IntimacyThinkOfUs"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[IntimacyThinkOfUs]" />
+        <SsdlProperty
+          Name="IntimacyPerceivedPerformance"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[IntimacyPerceivedPerformance]" />
+        <SsdlProperty
+          Name="IntimacyMetEvaluators"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[IntimacyMetEvaluators]" />
+        <SsdlProperty
+          Name="IntimacyMetCO"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[IntimacyMetCO]" />
+        <SsdlProperty
+          Name="IntimacyMetInfluencers"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[IntimacyMetInfluencers]" />
+        <SsdlProperty
+          Name="UnderstandingRequirement"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[UnderstandingRequirement]" />
+        <SsdlProperty
+          Name="UnderstandingExperience"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[UnderstandingExperience]" />
+        <SsdlProperty
+          Name="UnderstandingRisk"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[UnderstandingRisk]" />
+        <SsdlProperty
+          Name="UnderstandingMitigations"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[UnderstandingMitigations]" />
+        <SsdlProperty
+          Name="SolutionVetted"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[SolutionVetted]" />
+        <SsdlProperty
+          Name="SolutionViable"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[SolutionViable]" />
+        <SsdlProperty
+          Name="SolutionManagementViable"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[SolutionManagementViable]" />
+        <SsdlProperty
+          Name="SolutionTechnicalViable"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[SolutionTechnicalViable]" />
+        <SsdlProperty
+          Name="PriceUnderstanding"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PriceUnderstanding]" />
+        <SsdlProperty
+          Name="PriceToWinAnalysis"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PriceToWinAnalysis]" />
+        <SsdlProperty
+          Name="PriceUnderstandTrends"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PriceUnderstandTrends]" />
+        <SsdlProperty
+          Name="PriceBestValue"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PriceBestValue]" />
+        <SsdlProperty
+          Name="PriceWinningStrategy"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[PriceWinningStrategy]" />
+        <SsdlProperty
+          Name="StaffingQualifiedAndAvailable"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[StaffingQualifiedAndAvailable]" />
+        <SsdlProperty
+          Name="StaffingCustomerKnowIndividuals"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[StaffingCustomerKnowIndividuals]" />
+        <SsdlProperty
+          Name="StaffingHaveRequiredTraining"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[StaffingHaveRequiredTraining]" />
+        <SsdlProperty
+          Name="StaffingHaveRequiredCertifications"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[StaffingHaveRequiredCertifications]" />
+        <SsdlProperty
+          Name="ExperienceSuccessfulPastPerformance"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[ExperienceSuccessfulPastPerformance]" />
+        <SsdlProperty
+          Name="ExperienceCorporateQualifications"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[ExperienceCorporateQualifications]" />
+        <SsdlProperty
+          Name="ExperienceCertifications"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[ExperienceCertifications]" />
+        <SsdlProperty
+          Name="ExperienceQualityAssurancePlans"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[ExperienceQualityAssurancePlans]" />
+        <SsdlProperty
+          Name="scoreIntimacy"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scoreIntimacy]" />
+        <SsdlProperty
+          Name="percentIntimacy"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentIntimacy]" />
+        <SsdlProperty
+          Name="scoreUnderstanding"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scoreUnderstanding]" />
+        <SsdlProperty
+          Name="percentUnderstanding"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentUnderstanding]" />
+        <SsdlProperty
+          Name="scoreSolution"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scoreSolution]" />
+        <SsdlProperty
+          Name="percentSolution"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentSolution]" />
+        <SsdlProperty
+          Name="scorePricing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scorePricing]" />
+        <SsdlProperty
+          Name="percentPricing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentPricing]" />
+        <SsdlProperty
+          Name="scoreStaffing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scoreStaffing]" />
+        <SsdlProperty
+          Name="percentStaffing"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentStaffing]" />
+        <SsdlProperty
+          Name="scoreExperience"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scoreExperience]" />
+        <SsdlProperty
+          Name="percentExperience"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentExperience]" />
+        <SsdlProperty
+          Name="scoreOverall"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[scoreOverall]" />
+        <SsdlProperty
+          Name="percentOverall"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[percentOverall]" />
+        <SsdlProperty
+          Name="FinalIntimacy"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FinalIntimacy]" />
+        <SsdlProperty
+          Name="FinalUnderstanding"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FinalUnderstanding]" />
+        <SsdlProperty
+          Name="FinalSolution"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FinalSolution]" />
+        <SsdlProperty
+          Name="FinalPricing"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FinalPricing]" />
+        <SsdlProperty
+          Name="FinalStaffing"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FinalStaffing]" />
+        <SsdlProperty
+          Name="FinalExperience"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FinalExperience]" />
+        <SsdlProperty
+          Name="FinalTotal"
+          Nullable="True"
+          Precision="25"
+          Scale="15"
+          Type="decimal"
+          Property="Contract/Properties[FinalTotal]" />
+        <SsdlProperty
+          Name="DraftRFPDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[DraftRFPDate]" />
+        <SsdlProperty
+          Name="QADueDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[QADueDate]" />
+        <SsdlProperty
+          Name="SourcesSourghtRFIResponseDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[SourcesSourghtRFIResponseDate]" />
+        <SsdlProperty
+          Name="OralsRequired"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[OralsRequired]" />
+        <SsdlProperty
+          Name="OralsDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[OralsDate]" />
+        <SsdlProperty
+          Name="NumberOfBids"
+          Nullable="True"
+          Type="int"
+          Property="Contract/Properties[NumberOfBids]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PeriodOfPerformance"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[PeriodOfPerformance]" />
+        <SsdlProperty
+          Name="TotalContractValue"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[TotalContractValue]" />
+        <SsdlProperty
+          Name="FundedContractValue"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[FundedContractValue]" />
+        <SsdlProperty
+          Name="EffectiveDate"
+          Nullable="True"
+          Type="datetime"
+          Property="Contract/Properties[EffectiveDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MasterPK"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[MasterPK]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="Contract/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Contract/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="Contract/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="Contract/Properties[RowVersion]" />
+        <SsdlProperty
+          Name="CorporatePrime"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[CorporatePrime]" />
+        <SsdlProperty
+          Name="AnticipatedNumberFTE"
+          Nullable="True"
+          Type="decimal"
+          Property="Contract/Properties[AnticipatedNumberFTE]" />
+        <SsdlProperty
+          Name="Gate1Review"
+          Nullable="True"
+          Type="date"
+          Property="Contract/Properties[Gate1Review]" />
+        <SsdlProperty
+          Name="Gate2Review"
+          Nullable="True"
+          Type="date"
+          Property="Contract/Properties[Gate2Review]" />
+        <SsdlProperty
+          Name="Gate3Review"
+          Nullable="True"
+          Type="date"
+          Property="Contract/Properties[Gate3Review]" />
+        <SsdlProperty
+          Name="Gate1Completed"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[Gate1Completed]" />
+        <SsdlProperty
+          Name="Gate2Completed"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[Gate2Completed]" />
+        <SsdlProperty
+          Name="Gate3Completed"
+          Nullable="True"
+          Type="bit"
+          Property="Contract/Properties[Gate3Completed]" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="xG1"
+          Nullable="True"
+          Type="nchar"
+          Property="Contract/Properties[xG1]" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="xG2"
+          Nullable="True"
+          Type="nchar"
+          Property="Contract/Properties[xG2]" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="xG3"
+          Nullable="True"
+          Type="nchar"
+          Property="Contract/Properties[xG3]" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="xPrime"
+          Nullable="True"
+          Type="nchar"
+          Property="Contract/Properties[xPrime]" />
+        <SsdlForeignKeyProperty
+          Name="ChargeCodes_Contract"
+          Nullable="True"
+          Type="int"
+          PropertyName="ChargeCodes_Contract" />
+        <SsdlForeignKeyProperty
+          Name="Contract_AwardTypes"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_AwardTypes" />
+        <SsdlForeignKeyProperty
+          Name="Contract_ChargeCodes"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_ChargeCodes" />
+        <SsdlForeignKeyProperty
+          Name="Client"
+          Nullable="True"
+          Type="int"
+          PropertyName="Client" />
+        <SsdlForeignKeyProperty
+          Name="Contract_CompetitionClassifications"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_CompetitionClassifications" />
+        <SsdlForeignKeyProperty
+          Name="Contract_ContractStatus"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_ContractStatus" />
+        <SsdlForeignKeyProperty
+          Name="Contract_PipelineStatus"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_PipelineStatus" />
+        <SsdlForeignKeyProperty
+          Name="Contract_CoreCompetency"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_CoreCompetency" />
+        <SsdlForeignKeyProperty
+          Name="Contract_CoreCompetency1"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_CoreCompetency1" />
+        <SsdlForeignKeyProperty
+          Name="Contract_CoreCompetency2"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_CoreCompetency2" />
+        <SsdlForeignKeyProperty
+          Name="Contract_CoreCompetency3"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_CoreCompetency3" />
+        <SsdlForeignKeyProperty
+          Name="Contract_MasterContract"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_MasterContract" />
+        <SsdlForeignKeyProperty
+          Name="Contract_People"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_People" />
+        <SsdlForeignKeyProperty
+          Name="Contract_People1"
+          Nullable="True"
+          Type="int"
+          PropertyName="Contract_People1" />
+        <SsdlForeignKeyProperty
+          Name="EvaluationType_Contract"
+          Nullable="True"
+          Type="int"
+          PropertyName="EvaluationType_Contract" />
+        <SsdlForeignKeyProperty
+          Name="PwinWeights_Contract"
+          Nullable="True"
+          Type="int"
+          PropertyName="PwinWeights_Contract" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="ActionItems_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ActionItems_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ActionItems_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ActionItems_Contract]/Members[ActionItemsSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ActionItems_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="CitationAssignment_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="CitationAssignment_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CitationAssignment_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CitationAssignment_Contract]/Members[CitationAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CitationAssignment_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ClientAgencyAssignments_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ClientAgencyAssignments_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ClientAgencyAssignments_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ClientAgencyAssignments_Contract]/Members[ClientAgencyAssignmentsSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ClientAgencyAssignments_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="CompanyAssignment_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="CompanyAssignment_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CompanyAssignment_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[CompanyAssignment_Contract]/Members[CompanyAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CompanyAssignment_Contract1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ContractAccolades_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ContractAccolades_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ContractAccolades_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ContractAccolades_Contract]/Members[ContractAccoladesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContractAccolades_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ContractDocuments_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ContractDocuments_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ContractDocuments_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ContractDocuments_Contract]/Members[ContractDocumentsSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContractDocuments_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ContractNotes_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ContractNotes_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ContractNotes_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ContractNotes_Contract]/Members[ContractNotesSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContractNotes_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LaborCategory_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LaborCategory_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategory_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategory_Contract]/Members[LaborCategories]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LaborCategory_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ManagementPositionAssignment_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ManagementPositionAssignment_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ManagementPositionAssignment_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ManagementPositionAssignment_Contract]/Members[ManagementPositionAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ManagementPositionAssignment_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Modification_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Modification_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Modification_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Modification_Contract]/Members[Modifications]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Modification_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="PastPerformance_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="PastPerformance_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PastPerformance_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PastPerformance_Contract]/Members[PastPerformances]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PastPerformance_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="PayeeAssignment_Contract">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="PayeeAssignment_Contract" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PayeeAssignment_Contract]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PayeeAssignment_Contract]/Members[PayeeAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PayeeAssignment_Contract" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

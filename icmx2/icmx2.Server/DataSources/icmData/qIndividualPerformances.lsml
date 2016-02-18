@@ -1,0 +1,1339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="qIndividualPerformance">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="Contract_ContractStatus"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContractCount"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="IndividualID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="AVnotSpecified"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="AVImmediate"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="AVThirtyToSixty"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="AVSixtyToNinty"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="AVNintyPlus"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="NVnotSpecified"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="NVImmediate"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="NVThirtyToSixty"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="NVSixtyToNinty"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="NVNintyPlus"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="7" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="TotalFTE"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="FTEnotSpecified"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="FTEImmediate"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="FTEThirtyToSixty"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="FTESixtyToNinty"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="FTENintyPlus"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="38"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="qIndividualPerformances"
+      EntityType="qIndividualPerformance" />
+    <QueryOperation
+      Name="qIndividualPerformances_Single"
+      ReturnType="qIndividualPerformance">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="And">
+                        <BinaryExpression.Left>
+                          <BinaryExpression
+                            NodeType="And">
+                            <BinaryExpression.Left>
+                              <BinaryExpression
+                                NodeType="And">
+                                <BinaryExpression.Left>
+                                  <BinaryExpression
+                                    NodeType="And">
+                                    <BinaryExpression.Left>
+                                      <BinaryExpression
+                                        NodeType="And">
+                                        <BinaryExpression.Left>
+                                          <BinaryExpression
+                                            NodeType="And">
+                                            <BinaryExpression.Left>
+                                              <BinaryExpression
+                                                NodeType="And">
+                                                <BinaryExpression.Left>
+                                                  <BinaryExpression
+                                                    NodeType="And">
+                                                    <BinaryExpression.Left>
+                                                      <BinaryExpression
+                                                        NodeType="And">
+                                                        <BinaryExpression.Left>
+                                                          <BinaryExpression
+                                                            NodeType="And">
+                                                            <BinaryExpression.Left>
+                                                              <BinaryExpression
+                                                                NodeType="And">
+                                                                <BinaryExpression.Left>
+                                                                  <BinaryExpression
+                                                                    NodeType="And">
+                                                                    <BinaryExpression.Left>
+                                                                      <BinaryExpression
+                                                                        NodeType="And">
+                                                                        <BinaryExpression.Left>
+                                                                          <BinaryExpression
+                                                                            NodeType="Equal">
+                                                                            <BinaryExpression.Left>
+                                                                              <ChainExpression>
+                                                                                <MemberExpression
+                                                                                  Member="FTENintyPlus" />
+                                                                              </ChainExpression>
+                                                                            </BinaryExpression.Left>
+                                                                            <BinaryExpression.Right>
+                                                                              <ParameterExpression
+                                                                                Parameter="FTENintyPlus" />
+                                                                            </BinaryExpression.Right>
+                                                                          </BinaryExpression>
+                                                                        </BinaryExpression.Left>
+                                                                        <BinaryExpression.Right>
+                                                                          <BinaryExpression
+                                                                            NodeType="Equal">
+                                                                            <BinaryExpression.Left>
+                                                                              <ChainExpression>
+                                                                                <MemberExpression
+                                                                                  Member="FTESixtyToNinty" />
+                                                                              </ChainExpression>
+                                                                            </BinaryExpression.Left>
+                                                                            <BinaryExpression.Right>
+                                                                              <ParameterExpression
+                                                                                Parameter="FTESixtyToNinty" />
+                                                                            </BinaryExpression.Right>
+                                                                          </BinaryExpression>
+                                                                        </BinaryExpression.Right>
+                                                                      </BinaryExpression>
+                                                                    </BinaryExpression.Left>
+                                                                    <BinaryExpression.Right>
+                                                                      <BinaryExpression
+                                                                        NodeType="Equal">
+                                                                        <BinaryExpression.Left>
+                                                                          <ChainExpression>
+                                                                            <MemberExpression
+                                                                              Member="FTEThirtyToSixty" />
+                                                                          </ChainExpression>
+                                                                        </BinaryExpression.Left>
+                                                                        <BinaryExpression.Right>
+                                                                          <ParameterExpression
+                                                                            Parameter="FTEThirtyToSixty" />
+                                                                        </BinaryExpression.Right>
+                                                                      </BinaryExpression>
+                                                                    </BinaryExpression.Right>
+                                                                  </BinaryExpression>
+                                                                </BinaryExpression.Left>
+                                                                <BinaryExpression.Right>
+                                                                  <BinaryExpression
+                                                                    NodeType="Equal">
+                                                                    <BinaryExpression.Left>
+                                                                      <ChainExpression>
+                                                                        <MemberExpression
+                                                                          Member="FTEImmediate" />
+                                                                      </ChainExpression>
+                                                                    </BinaryExpression.Left>
+                                                                    <BinaryExpression.Right>
+                                                                      <ParameterExpression
+                                                                        Parameter="FTEImmediate" />
+                                                                    </BinaryExpression.Right>
+                                                                  </BinaryExpression>
+                                                                </BinaryExpression.Right>
+                                                              </BinaryExpression>
+                                                            </BinaryExpression.Left>
+                                                            <BinaryExpression.Right>
+                                                              <BinaryExpression
+                                                                NodeType="Equal">
+                                                                <BinaryExpression.Left>
+                                                                  <ChainExpression>
+                                                                    <MemberExpression
+                                                                      Member="FTEnotSpecified" />
+                                                                  </ChainExpression>
+                                                                </BinaryExpression.Left>
+                                                                <BinaryExpression.Right>
+                                                                  <ParameterExpression
+                                                                    Parameter="FTEnotSpecified" />
+                                                                </BinaryExpression.Right>
+                                                              </BinaryExpression>
+                                                            </BinaryExpression.Right>
+                                                          </BinaryExpression>
+                                                        </BinaryExpression.Left>
+                                                        <BinaryExpression.Right>
+                                                          <BinaryExpression
+                                                            NodeType="Equal">
+                                                            <BinaryExpression.Left>
+                                                              <ChainExpression>
+                                                                <MemberExpression
+                                                                  Member="TotalFTE" />
+                                                              </ChainExpression>
+                                                            </BinaryExpression.Left>
+                                                            <BinaryExpression.Right>
+                                                              <ParameterExpression
+                                                                Parameter="TotalFTE" />
+                                                            </BinaryExpression.Right>
+                                                          </BinaryExpression>
+                                                        </BinaryExpression.Right>
+                                                      </BinaryExpression>
+                                                    </BinaryExpression.Left>
+                                                    <BinaryExpression.Right>
+                                                      <BinaryExpression
+                                                        NodeType="Equal">
+                                                        <BinaryExpression.Left>
+                                                          <ChainExpression>
+                                                            <MemberExpression
+                                                              Member="NVNintyPlus" />
+                                                          </ChainExpression>
+                                                        </BinaryExpression.Left>
+                                                        <BinaryExpression.Right>
+                                                          <ParameterExpression
+                                                            Parameter="NVNintyPlus" />
+                                                        </BinaryExpression.Right>
+                                                      </BinaryExpression>
+                                                    </BinaryExpression.Right>
+                                                  </BinaryExpression>
+                                                </BinaryExpression.Left>
+                                                <BinaryExpression.Right>
+                                                  <BinaryExpression
+                                                    NodeType="Equal">
+                                                    <BinaryExpression.Left>
+                                                      <ChainExpression>
+                                                        <MemberExpression
+                                                          Member="NVSixtyToNinty" />
+                                                      </ChainExpression>
+                                                    </BinaryExpression.Left>
+                                                    <BinaryExpression.Right>
+                                                      <ParameterExpression
+                                                        Parameter="NVSixtyToNinty" />
+                                                    </BinaryExpression.Right>
+                                                  </BinaryExpression>
+                                                </BinaryExpression.Right>
+                                              </BinaryExpression>
+                                            </BinaryExpression.Left>
+                                            <BinaryExpression.Right>
+                                              <BinaryExpression
+                                                NodeType="Equal">
+                                                <BinaryExpression.Left>
+                                                  <ChainExpression>
+                                                    <MemberExpression
+                                                      Member="NVThirtyToSixty" />
+                                                  </ChainExpression>
+                                                </BinaryExpression.Left>
+                                                <BinaryExpression.Right>
+                                                  <ParameterExpression
+                                                    Parameter="NVThirtyToSixty" />
+                                                </BinaryExpression.Right>
+                                              </BinaryExpression>
+                                            </BinaryExpression.Right>
+                                          </BinaryExpression>
+                                        </BinaryExpression.Left>
+                                        <BinaryExpression.Right>
+                                          <BinaryExpression
+                                            NodeType="Equal">
+                                            <BinaryExpression.Left>
+                                              <ChainExpression>
+                                                <MemberExpression
+                                                  Member="NVImmediate" />
+                                              </ChainExpression>
+                                            </BinaryExpression.Left>
+                                            <BinaryExpression.Right>
+                                              <ParameterExpression
+                                                Parameter="NVImmediate" />
+                                            </BinaryExpression.Right>
+                                          </BinaryExpression>
+                                        </BinaryExpression.Right>
+                                      </BinaryExpression>
+                                    </BinaryExpression.Left>
+                                    <BinaryExpression.Right>
+                                      <BinaryExpression
+                                        NodeType="Equal">
+                                        <BinaryExpression.Left>
+                                          <ChainExpression>
+                                            <MemberExpression
+                                              Member="NVnotSpecified" />
+                                          </ChainExpression>
+                                        </BinaryExpression.Left>
+                                        <BinaryExpression.Right>
+                                          <ParameterExpression
+                                            Parameter="NVnotSpecified" />
+                                        </BinaryExpression.Right>
+                                      </BinaryExpression>
+                                    </BinaryExpression.Right>
+                                  </BinaryExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <BinaryExpression
+                                    NodeType="Equal">
+                                    <BinaryExpression.Left>
+                                      <ChainExpression>
+                                        <MemberExpression
+                                          Member="AVNintyPlus" />
+                                      </ChainExpression>
+                                    </BinaryExpression.Left>
+                                    <BinaryExpression.Right>
+                                      <ParameterExpression
+                                        Parameter="AVNintyPlus" />
+                                    </BinaryExpression.Right>
+                                  </BinaryExpression>
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="AVSixtyToNinty" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="AVSixtyToNinty" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <BinaryExpression
+                            NodeType="Equal">
+                            <BinaryExpression.Left>
+                              <ChainExpression>
+                                <MemberExpression
+                                  Member="AVThirtyToSixty" />
+                              </ChainExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <ParameterExpression
+                                Parameter="AVThirtyToSixty" />
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="AVImmediate" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="AVImmediate" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AVnotSpecified" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="AVnotSpecified" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="IndividualID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="IndividualID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="qIndividualPerformances" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="IndividualID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'IndividualID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVnotSpecified"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVnotSpecified' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVImmediate"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVImmediate' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVThirtyToSixty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVThirtyToSixty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVSixtyToNinty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVSixtyToNinty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVNintyPlus"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVNintyPlus' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVnotSpecified"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVnotSpecified' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVImmediate"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVImmediate' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVThirtyToSixty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVThirtyToSixty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVSixtyToNinty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVSixtyToNinty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVNintyPlus"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVNintyPlus' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="TotalFTE"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'TotalFTE' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTEnotSpecified"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTEnotSpecified' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTEImmediate"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTEImmediate' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTEThirtyToSixty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTEThirtyToSixty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTESixtyToNinty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTESixtyToNinty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTENintyPlus"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTENintyPlus' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="qIndividualPerformances_SingleOrDefault"
+      ReturnType="qIndividualPerformance">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="And">
+                        <BinaryExpression.Left>
+                          <BinaryExpression
+                            NodeType="And">
+                            <BinaryExpression.Left>
+                              <BinaryExpression
+                                NodeType="And">
+                                <BinaryExpression.Left>
+                                  <BinaryExpression
+                                    NodeType="And">
+                                    <BinaryExpression.Left>
+                                      <BinaryExpression
+                                        NodeType="And">
+                                        <BinaryExpression.Left>
+                                          <BinaryExpression
+                                            NodeType="And">
+                                            <BinaryExpression.Left>
+                                              <BinaryExpression
+                                                NodeType="And">
+                                                <BinaryExpression.Left>
+                                                  <BinaryExpression
+                                                    NodeType="And">
+                                                    <BinaryExpression.Left>
+                                                      <BinaryExpression
+                                                        NodeType="And">
+                                                        <BinaryExpression.Left>
+                                                          <BinaryExpression
+                                                            NodeType="And">
+                                                            <BinaryExpression.Left>
+                                                              <BinaryExpression
+                                                                NodeType="And">
+                                                                <BinaryExpression.Left>
+                                                                  <BinaryExpression
+                                                                    NodeType="And">
+                                                                    <BinaryExpression.Left>
+                                                                      <BinaryExpression
+                                                                        NodeType="And">
+                                                                        <BinaryExpression.Left>
+                                                                          <BinaryExpression
+                                                                            NodeType="Equal">
+                                                                            <BinaryExpression.Left>
+                                                                              <ChainExpression>
+                                                                                <MemberExpression
+                                                                                  Member="FTENintyPlus" />
+                                                                              </ChainExpression>
+                                                                            </BinaryExpression.Left>
+                                                                            <BinaryExpression.Right>
+                                                                              <ParameterExpression
+                                                                                Parameter="FTENintyPlus" />
+                                                                            </BinaryExpression.Right>
+                                                                          </BinaryExpression>
+                                                                        </BinaryExpression.Left>
+                                                                        <BinaryExpression.Right>
+                                                                          <BinaryExpression
+                                                                            NodeType="Equal">
+                                                                            <BinaryExpression.Left>
+                                                                              <ChainExpression>
+                                                                                <MemberExpression
+                                                                                  Member="FTESixtyToNinty" />
+                                                                              </ChainExpression>
+                                                                            </BinaryExpression.Left>
+                                                                            <BinaryExpression.Right>
+                                                                              <ParameterExpression
+                                                                                Parameter="FTESixtyToNinty" />
+                                                                            </BinaryExpression.Right>
+                                                                          </BinaryExpression>
+                                                                        </BinaryExpression.Right>
+                                                                      </BinaryExpression>
+                                                                    </BinaryExpression.Left>
+                                                                    <BinaryExpression.Right>
+                                                                      <BinaryExpression
+                                                                        NodeType="Equal">
+                                                                        <BinaryExpression.Left>
+                                                                          <ChainExpression>
+                                                                            <MemberExpression
+                                                                              Member="FTEThirtyToSixty" />
+                                                                          </ChainExpression>
+                                                                        </BinaryExpression.Left>
+                                                                        <BinaryExpression.Right>
+                                                                          <ParameterExpression
+                                                                            Parameter="FTEThirtyToSixty" />
+                                                                        </BinaryExpression.Right>
+                                                                      </BinaryExpression>
+                                                                    </BinaryExpression.Right>
+                                                                  </BinaryExpression>
+                                                                </BinaryExpression.Left>
+                                                                <BinaryExpression.Right>
+                                                                  <BinaryExpression
+                                                                    NodeType="Equal">
+                                                                    <BinaryExpression.Left>
+                                                                      <ChainExpression>
+                                                                        <MemberExpression
+                                                                          Member="FTEImmediate" />
+                                                                      </ChainExpression>
+                                                                    </BinaryExpression.Left>
+                                                                    <BinaryExpression.Right>
+                                                                      <ParameterExpression
+                                                                        Parameter="FTEImmediate" />
+                                                                    </BinaryExpression.Right>
+                                                                  </BinaryExpression>
+                                                                </BinaryExpression.Right>
+                                                              </BinaryExpression>
+                                                            </BinaryExpression.Left>
+                                                            <BinaryExpression.Right>
+                                                              <BinaryExpression
+                                                                NodeType="Equal">
+                                                                <BinaryExpression.Left>
+                                                                  <ChainExpression>
+                                                                    <MemberExpression
+                                                                      Member="FTEnotSpecified" />
+                                                                  </ChainExpression>
+                                                                </BinaryExpression.Left>
+                                                                <BinaryExpression.Right>
+                                                                  <ParameterExpression
+                                                                    Parameter="FTEnotSpecified" />
+                                                                </BinaryExpression.Right>
+                                                              </BinaryExpression>
+                                                            </BinaryExpression.Right>
+                                                          </BinaryExpression>
+                                                        </BinaryExpression.Left>
+                                                        <BinaryExpression.Right>
+                                                          <BinaryExpression
+                                                            NodeType="Equal">
+                                                            <BinaryExpression.Left>
+                                                              <ChainExpression>
+                                                                <MemberExpression
+                                                                  Member="TotalFTE" />
+                                                              </ChainExpression>
+                                                            </BinaryExpression.Left>
+                                                            <BinaryExpression.Right>
+                                                              <ParameterExpression
+                                                                Parameter="TotalFTE" />
+                                                            </BinaryExpression.Right>
+                                                          </BinaryExpression>
+                                                        </BinaryExpression.Right>
+                                                      </BinaryExpression>
+                                                    </BinaryExpression.Left>
+                                                    <BinaryExpression.Right>
+                                                      <BinaryExpression
+                                                        NodeType="Equal">
+                                                        <BinaryExpression.Left>
+                                                          <ChainExpression>
+                                                            <MemberExpression
+                                                              Member="NVNintyPlus" />
+                                                          </ChainExpression>
+                                                        </BinaryExpression.Left>
+                                                        <BinaryExpression.Right>
+                                                          <ParameterExpression
+                                                            Parameter="NVNintyPlus" />
+                                                        </BinaryExpression.Right>
+                                                      </BinaryExpression>
+                                                    </BinaryExpression.Right>
+                                                  </BinaryExpression>
+                                                </BinaryExpression.Left>
+                                                <BinaryExpression.Right>
+                                                  <BinaryExpression
+                                                    NodeType="Equal">
+                                                    <BinaryExpression.Left>
+                                                      <ChainExpression>
+                                                        <MemberExpression
+                                                          Member="NVSixtyToNinty" />
+                                                      </ChainExpression>
+                                                    </BinaryExpression.Left>
+                                                    <BinaryExpression.Right>
+                                                      <ParameterExpression
+                                                        Parameter="NVSixtyToNinty" />
+                                                    </BinaryExpression.Right>
+                                                  </BinaryExpression>
+                                                </BinaryExpression.Right>
+                                              </BinaryExpression>
+                                            </BinaryExpression.Left>
+                                            <BinaryExpression.Right>
+                                              <BinaryExpression
+                                                NodeType="Equal">
+                                                <BinaryExpression.Left>
+                                                  <ChainExpression>
+                                                    <MemberExpression
+                                                      Member="NVThirtyToSixty" />
+                                                  </ChainExpression>
+                                                </BinaryExpression.Left>
+                                                <BinaryExpression.Right>
+                                                  <ParameterExpression
+                                                    Parameter="NVThirtyToSixty" />
+                                                </BinaryExpression.Right>
+                                              </BinaryExpression>
+                                            </BinaryExpression.Right>
+                                          </BinaryExpression>
+                                        </BinaryExpression.Left>
+                                        <BinaryExpression.Right>
+                                          <BinaryExpression
+                                            NodeType="Equal">
+                                            <BinaryExpression.Left>
+                                              <ChainExpression>
+                                                <MemberExpression
+                                                  Member="NVImmediate" />
+                                              </ChainExpression>
+                                            </BinaryExpression.Left>
+                                            <BinaryExpression.Right>
+                                              <ParameterExpression
+                                                Parameter="NVImmediate" />
+                                            </BinaryExpression.Right>
+                                          </BinaryExpression>
+                                        </BinaryExpression.Right>
+                                      </BinaryExpression>
+                                    </BinaryExpression.Left>
+                                    <BinaryExpression.Right>
+                                      <BinaryExpression
+                                        NodeType="Equal">
+                                        <BinaryExpression.Left>
+                                          <ChainExpression>
+                                            <MemberExpression
+                                              Member="NVnotSpecified" />
+                                          </ChainExpression>
+                                        </BinaryExpression.Left>
+                                        <BinaryExpression.Right>
+                                          <ParameterExpression
+                                            Parameter="NVnotSpecified" />
+                                        </BinaryExpression.Right>
+                                      </BinaryExpression>
+                                    </BinaryExpression.Right>
+                                  </BinaryExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <BinaryExpression
+                                    NodeType="Equal">
+                                    <BinaryExpression.Left>
+                                      <ChainExpression>
+                                        <MemberExpression
+                                          Member="AVNintyPlus" />
+                                      </ChainExpression>
+                                    </BinaryExpression.Left>
+                                    <BinaryExpression.Right>
+                                      <ParameterExpression
+                                        Parameter="AVNintyPlus" />
+                                    </BinaryExpression.Right>
+                                  </BinaryExpression>
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="AVSixtyToNinty" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="AVSixtyToNinty" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <BinaryExpression
+                            NodeType="Equal">
+                            <BinaryExpression.Left>
+                              <ChainExpression>
+                                <MemberExpression
+                                  Member="AVThirtyToSixty" />
+                              </ChainExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <ParameterExpression
+                                Parameter="AVThirtyToSixty" />
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="AVImmediate" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="AVImmediate" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AVnotSpecified" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="AVnotSpecified" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="IndividualID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="IndividualID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="qIndividualPerformances" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="IndividualID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'IndividualID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVnotSpecified"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVnotSpecified' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVImmediate"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVImmediate' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVThirtyToSixty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVThirtyToSixty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVSixtyToNinty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVSixtyToNinty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="AVNintyPlus"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'AVNintyPlus' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVnotSpecified"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVnotSpecified' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVImmediate"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVImmediate' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVThirtyToSixty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVThirtyToSixty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVSixtyToNinty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVSixtyToNinty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="NVNintyPlus"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'NVNintyPlus' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="TotalFTE"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'TotalFTE' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTEnotSpecified"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTEnotSpecified' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTEImmediate"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTEImmediate' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTEThirtyToSixty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTEThirtyToSixty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTESixtyToNinty"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTESixtyToNinty' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="FTENintyPlus"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'FTENintyPlus' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="qIndividualPerformances">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="qIndividualPerformance" />
+        <IsView />
+        <SsdlProperty
+          Name="Contract_ContractStatus"
+          Nullable="True"
+          Type="int"
+          Property="qIndividualPerformance/Properties[Contract_ContractStatus]" />
+        <SsdlProperty
+          Name="ContractCount"
+          Nullable="True"
+          Type="int"
+          Property="qIndividualPerformance/Properties[ContractCount]" />
+        <SsdlProperty
+          Name="IndividualID"
+          Nullable="False"
+          Type="int"
+          Property="qIndividualPerformance/Properties[IndividualID]" />
+        <SsdlProperty
+          Name="AVnotSpecified"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[AVnotSpecified]" />
+        <SsdlProperty
+          Name="AVImmediate"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[AVImmediate]" />
+        <SsdlProperty
+          Name="AVThirtyToSixty"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[AVThirtyToSixty]" />
+        <SsdlProperty
+          Name="AVSixtyToNinty"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[AVSixtyToNinty]" />
+        <SsdlProperty
+          Name="AVNintyPlus"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[AVNintyPlus]" />
+        <SsdlProperty
+          Name="NVnotSpecified"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[NVnotSpecified]" />
+        <SsdlProperty
+          Name="NVImmediate"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[NVImmediate]" />
+        <SsdlProperty
+          Name="NVThirtyToSixty"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[NVThirtyToSixty]" />
+        <SsdlProperty
+          Name="NVSixtyToNinty"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[NVSixtyToNinty]" />
+        <SsdlProperty
+          Name="NVNintyPlus"
+          Nullable="False"
+          Precision="38"
+          Scale="7"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[NVNintyPlus]" />
+        <SsdlProperty
+          Name="TotalFTE"
+          Nullable="False"
+          Precision="38"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[TotalFTE]" />
+        <SsdlProperty
+          Name="FTEnotSpecified"
+          Nullable="False"
+          Precision="38"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[FTEnotSpecified]" />
+        <SsdlProperty
+          Name="FTEImmediate"
+          Nullable="False"
+          Precision="38"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[FTEImmediate]" />
+        <SsdlProperty
+          Name="FTEThirtyToSixty"
+          Nullable="False"
+          Precision="38"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[FTEThirtyToSixty]" />
+        <SsdlProperty
+          Name="FTESixtyToNinty"
+          Nullable="False"
+          Precision="38"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[FTESixtyToNinty]" />
+        <SsdlProperty
+          Name="FTENintyPlus"
+          Nullable="False"
+          Precision="38"
+          Type="decimal"
+          Property="qIndividualPerformance/Properties[FTENintyPlus]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

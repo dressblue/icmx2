@@ -1,0 +1,944 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="PeopleSet">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="DisplayName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FirstName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MiddleName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LastName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Street1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Street2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="State"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Zip"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HomePhone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MobilePhone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HomeEmail"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="BusinessEmail"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Notes"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="3000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="fkDocumentsOnSharePoint"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="BusinessPhone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LinkedIn"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="1000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ClientAgenciesSet"
+        Association="ClientAgency"
+        FromEnd="PeopleSet"
+        ToEnd="ClientAgenciesSet" />
+      <NavigationProperty
+        Name="Contracts"
+        Association="Contract_People"
+        FromEnd="PeopleSet"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="Contracts1"
+        Association="Contract_People1"
+        FromEnd="PeopleSet"
+        ToEnd="Contracts" />
+      <NavigationProperty
+        Name="LaborCategoryAssignmentsSet"
+        Association="LaborCategoryAssignments_People"
+        FromEnd="PeopleSet"
+        ToEnd="LaborCategoryAssignmentsSet" />
+      <NavigationProperty
+        Name="ManagementPositionAssignments"
+        Association="ManagementPositionAssignment_People"
+        FromEnd="PeopleSet"
+        ToEnd="ManagementPositionAssignments" />
+      <NavigationProperty
+        Name="Modifications"
+        Association="Modification_People"
+        FromEnd="PeopleSet"
+        ToEnd="Modifications" />
+      <NavigationProperty
+        Name="Modifications1"
+        Association="Modification_People1"
+        FromEnd="PeopleSet"
+        ToEnd="Modifications" />
+      <NavigationProperty
+        Name="PastPerformances"
+        Association="PastPerformance_People"
+        FromEnd="PeopleSet"
+        ToEnd="PastPerformances" />
+      <NavigationProperty
+        Name="Payees"
+        Association="Payee_People"
+        FromEnd="PeopleSet"
+        ToEnd="Payees" />
+      <NavigationProperty
+        Name="PayeeAssignments"
+        Association="PayeeAssignment_People"
+        FromEnd="PeopleSet"
+        ToEnd="PayeeAssignments" />
+      <NavigationProperty
+        Name="CompaniesSet"
+        Association="People_Companies"
+        FromEnd="PeopleSet"
+        ToEnd="CompaniesSet" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Contract_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <Association
+    Name="Contract_People1">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
+  <Association
+    Name="LaborCategoryAssignments_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LaborCategoryAssignmentsSet"
+      Multiplicity="Many"
+      EntityType="LaborCategoryAssignmentsSet" />
+  </Association>
+  <Association
+    Name="ManagementPositionAssignment_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ManagementPositionAssignments"
+      Multiplicity="Many"
+      EntityType="ManagementPositionAssignment" />
+  </Association>
+  <Association
+    Name="Modification_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Modifications"
+      Multiplicity="Many"
+      EntityType="Modification" />
+  </Association>
+  <Association
+    Name="Modification_People1">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Modifications"
+      Multiplicity="Many"
+      EntityType="Modification" />
+  </Association>
+  <Association
+    Name="PastPerformance_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="PastPerformances"
+      Multiplicity="Many"
+      EntityType="PastPerformance" />
+  </Association>
+  <Association
+    Name="Payee_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Payees"
+      Multiplicity="Many"
+      EntityType="Payee" />
+  </Association>
+  <Association
+    Name="PayeeAssignment_People">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="PayeeAssignments"
+      Multiplicity="Many"
+      EntityType="PayeeAssignment" />
+  </Association>
+  <EntityContainer
+    Name="icmData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="PeopleSet"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="PeopleSet" />
+    <AssociationSet
+      Name="Contract_People"
+      Association="Contract_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Contract_People1"
+      Association="Contract_People1">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet
+      Name="LaborCategoryAssignments_People"
+      Association="LaborCategoryAssignments_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="LaborCategoryAssignmentsSet"
+        EntitySet="LaborCategoryAssignmentsSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ManagementPositionAssignment_People"
+      Association="ManagementPositionAssignment_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="ManagementPositionAssignments"
+        EntitySet="ManagementPositionAssignments" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Modification_People"
+      Association="Modification_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="Modifications"
+        EntitySet="Modifications" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Modification_People1"
+      Association="Modification_People1">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="Modifications"
+        EntitySet="Modifications" />
+    </AssociationSet>
+    <AssociationSet
+      Name="PastPerformance_People"
+      Association="PastPerformance_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="PastPerformances"
+        EntitySet="PastPerformances" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Payee_People"
+      Association="Payee_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="Payees"
+        EntitySet="Payees" />
+    </AssociationSet>
+    <AssociationSet
+      Name="PayeeAssignment_People"
+      Association="PayeeAssignment_People">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="PayeeAssignments"
+        EntitySet="PayeeAssignments" />
+    </AssociationSet>
+    <QueryOperation
+      Name="PeopleSet_Single"
+      ReturnType="PeopleSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="PeopleSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="PeopleSet_SingleOrDefault"
+      ReturnType="PeopleSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="PeopleSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="icmDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="PeopleSet">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="PeopleSet" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="PeopleSet/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="DisplayName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[DisplayName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FirstName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[FirstName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MiddleName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[MiddleName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="LastName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[LastName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Street1"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[Street1]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Street2"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[Street2]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="City"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[City]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="State"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[State]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Zip"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[Zip]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="HomePhone"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[HomePhone]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MobilePhone"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[MobilePhone]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="HomeEmail"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[HomeEmail]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="BusinessEmail"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[BusinessEmail]" />
+        <SsdlProperty
+          MaxLength="3000"
+          Name="Notes"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[Notes]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="fkDocumentsOnSharePoint"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[fkDocumentsOnSharePoint]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="PeopleSet/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="PeopleSet/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="PeopleSet/Properties[RowVersion]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Title"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="BusinessPhone"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[BusinessPhone]" />
+        <SsdlProperty
+          MaxLength="1000"
+          Name="LinkedIn"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[LinkedIn]" />
+        <SsdlForeignKeyProperty
+          Name="ClientAgency"
+          Nullable="True"
+          Type="int"
+          PropertyName="ClientAgency" />
+        <SsdlForeignKeyProperty
+          Name="People_Companies"
+          Nullable="True"
+          Type="int"
+          PropertyName="People_Companies" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_People]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Contract_People1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Contract_People1" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_People1]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Contract_People1]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Contract_People1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LaborCategoryAssignments_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LaborCategoryAssignments_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategoryAssignments_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[LaborCategoryAssignments_People]/Members[LaborCategoryAssignmentsSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LaborCategoryAssignments_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ManagementPositionAssignment_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ManagementPositionAssignment_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ManagementPositionAssignment_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[ManagementPositionAssignment_People]/Members[ManagementPositionAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ManagementPositionAssignment_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Modification_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Modification_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Modification_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Modification_People]/Members[Modifications]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Modification_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Modification_People1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Modification_People1" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Modification_People1]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Modification_People1]/Members[Modifications]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Modification_People1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="PastPerformance_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="PastPerformance_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PastPerformance_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PastPerformance_People]/Members[PastPerformances]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PastPerformance_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Payee_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Payee_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Payee_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[Payee_People]/Members[Payees]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Payee_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="PayeeAssignment_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="PayeeAssignment_People" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PayeeAssignment_People]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[PayeeAssignment_People]/Members[PayeeAssignments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PayeeAssignment_People" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>
