@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowsePayeeAssignments">
+    Name="BrowseClientAgenciesSet">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="icmData" />
       <DisplayName
-        Value="Payees" />
+        Value="Clients" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,33 +22,29 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="PayeeAssignmentList"
+            Name="ClientAgenciesSetList"
             Kind="Group">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="payee" />
-            </ContentItem.Attributes>
             <ContentItem
-              Name="PayeeAssignments"
+              Name="ClientAgenciesSet"
               Kind="Collection"
-              DataType="CollectionView$PayeeAssignment"
+              DataType="CollectionView$ClientAgenciesSet"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Payee" />
+                  Value="Clients" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowsePayeeAssignments/Properties[PayeeAssignments]" />
+                      Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="PayeeAssignment"
+                DataType="ClientAgenciesSet"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -60,87 +56,39 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="Contract"
-                  Kind="Details"
-                  DataType="Contract">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="PayeeAssignment/Properties[Contract]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="Contract1"
-                    Kind="Details"
-                    DataType="Contract">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="Payee"
-                  Kind="Details"
-                  DataType="Payee">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="PayeeAssignment/Properties[Payee]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="Payee1"
-                    Kind="Details"
-                    DataType="Payee">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="PeopleSet"
-                  Kind="Details"
-                  DataType="PeopleSet">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="POC" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="PayeeAssignment/Properties[PeopleSet]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="PeopleSet1"
-                    Kind="Details"
-                    DataType="PeopleSet">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="Active"
+                  Name="DisplayName"
                   Kind="Value"
-                  DataType=":Boolean">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="PayeeAssignment/Properties[Active]" />
+                          Member="ClientAgenciesSet/Properties[DisplayName]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Large"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Acronym"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ClientAgenciesSet/Properties[Acronym]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -156,52 +104,6 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="StartPayee"
-                  Kind="Value"
-                  DataType=":DateTime">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Start" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="PayeeAssignment/Properties[StartPayee]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="EndPayee"
-                  Kind="Value"
-                  DataType=":DateTime?">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="End" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="PayeeAssignment/Properties[EndPayee]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -222,16 +124,16 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewPayeeAssignment]">
+                        Target="!module/Methods[showViewClientAgenciesSet]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowsePayeeAssignments/Properties[PayeeAssignments]" />
+                            Collection="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
-                          Parameter="PayeeAssignment">
+                          Parameter="ClientAgenciesSet">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowsePayeeAssignments/Properties[PayeeAssignments]" />
+                              Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -244,7 +146,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddPayeeAssignment"
+                Name="AddClientAgenciesSet"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -256,12 +158,12 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditPayeeAssignment]">
+                          Target="!module/Methods[showAddEditClientAgenciesSet]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowsePayeeAssignments/Properties[PayeeAssignments]" />
+                              Collection="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditPayeeAssignment]/Parameters[PayeeAssignment]" />
+                              TargetParameter="!module/Methods[showAddEditClientAgenciesSet]/Parameters[ClientAgenciesSet]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>
@@ -280,7 +182,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchPayeeAssignments"
+                Name="SearchClientAgenciesSet"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -292,7 +194,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowsePayeeAssignments/Properties[PayeeAssignments]" />
+                          Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -357,28 +259,36 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="PayeeAssignments"
+        Name="ClientAgenciesSet"
         PageSize="45"
-        PropertyType="CollectionView$PayeeAssignment">
+        PropertyType="CollectionView$ClientAgenciesSet">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="PayeeAssignmentsQuery"
-            ReturnType="PayeeAssignment*">
+            Name="ClientAgenciesSetQuery"
+            ReturnType="ClientAgenciesSet*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="icmData/Members[PayeeAssignments]" />
+                  Member="icmData/Members[ClientAgenciesSet]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.SortCriteria>
+              <SortCriterion>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="DisplayName" />
+                </ChainExpression>
+              </SortCriterion>
+            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowsePayeeAssignments/Properties[PayeeAssignments]/Query" />
+              Target="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -386,10 +296,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowsePayeeAssignments">
+      Name="showBrowseClientAgenciesSet">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowsePayeeAssignments" />
+          TargetScreen="BrowseClientAgenciesSet" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

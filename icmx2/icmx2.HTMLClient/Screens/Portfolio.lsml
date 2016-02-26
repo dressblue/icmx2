@@ -47,7 +47,8 @@
                 <ContentItem
                   Name="ClientAgenciesSet"
                   Kind="Details"
-                  DataType="ClientAgenciesSet">
+                  DataType="ClientAgenciesSet"
+                  View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Client" />
@@ -61,12 +62,16 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="ClientAgenciesSet1"
-                    Kind="Details"
-                    DataType="ClientAgenciesSet">
+                    Name="DisplayName"
+                    Kind="Value"
+                    DataType=":String?"
+                    View="Microsoft.LightSwitch.MobileWeb:Paragraph">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression />
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ClientAgenciesSet/Properties[DisplayName]" />
+                        </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
@@ -86,7 +91,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="100"
+                            Value="125"
                             ResultType=":Double" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -142,7 +147,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="100"
+                            Value="150"
                             ResultType=":Double" />
                         </ChainExpression>
                       </ScreenExpressionTree>

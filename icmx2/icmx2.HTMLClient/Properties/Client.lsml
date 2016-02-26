@@ -52,5 +52,11 @@
     <ApplicationNavigationMethodLink
       Name="link4"
       Method="!module/Methods[showBrowsePayeeAssignments]" />
+    <ApplicationNavigationMethodLink
+      Name="link5"
+      Method="!module/Methods[showBrowseClientAgenciesSet]" />
+    <ApplicationNavigationMethodLink
+      Name="link6"
+      Method="!module/Methods[showBrowseCompaniesSet]" />
   </Application.NavigationItems>
 </Application>
