@@ -276,6 +276,71 @@
         Association="People_Companies"
         FromEnd="PeopleSet"
         ToEnd="CompaniesSet" />
+      <EntityProperty
+        Name="FileNbr"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HireDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ServiceDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RehireDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FLSAStatus"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FullPartTime"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WorksInState"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="100" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -739,6 +804,45 @@
           Nullable="True"
           Type="nvarchar"
           Property="PeopleSet/Properties[LinkedIn]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="FileNbr"
+          Nullable="True"
+          Type="nchar"
+          Property="PeopleSet/Properties[FileNbr]" />
+        <SsdlProperty
+          Name="HireDate"
+          Nullable="True"
+          Type="date"
+          Property="PeopleSet/Properties[HireDate]" />
+        <SsdlProperty
+          Name="ServiceDate"
+          Nullable="True"
+          Type="date"
+          Property="PeopleSet/Properties[ServiceDate]" />
+        <SsdlProperty
+          Name="RehireDate"
+          Nullable="True"
+          Type="date"
+          Property="PeopleSet/Properties[RehireDate]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="FLSAStatus"
+          Nullable="True"
+          Type="nvarchar"
+          Property="PeopleSet/Properties[FLSAStatus]" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="FullPartTime"
+          Nullable="True"
+          Type="nchar"
+          Property="PeopleSet/Properties[FullPartTime]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="WorksInState"
+          Nullable="True"
+          Type="nchar"
+          Property="PeopleSet/Properties[WorksInState]" />
         <SsdlForeignKeyProperty
           Name="ClientAgency"
           Nullable="True"

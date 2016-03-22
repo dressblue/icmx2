@@ -261,6 +261,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTEnotSpecified2"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE ?" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qPersonPerformanceX/Properties[FTEnotSpecified]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVImmediate"
                   Kind="Value"
                   DataType=":Decimal">
@@ -302,6 +331,35 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="qPersonPerformanceX/Properties[NVImmediate]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTEImmediate2"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE Now" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qPersonPerformanceX/Properties[FTEImmediate]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -377,6 +435,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTEThirtyToSixty2"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 30-60" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qPersonPerformanceX/Properties[FTEThirtyToSixty]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVSixtyToNinty"
                   Kind="Value"
                   DataType=":Decimal">
@@ -418,6 +505,35 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="qPersonPerformanceX/Properties[NVSixtyToNinty]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTESixtyToNinty2"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 60-90" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qPersonPerformanceX/Properties[FTESixtyToNinty]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -487,6 +603,84 @@
                           <ConstantExpression
                             Value="Small"
                             ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTENintyPlus2"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 90+" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qPersonPerformanceX/Properties[FTENintyPlus]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="ContractCount"
+                  Kind="Value"
+                  DataType=":Int32?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="#" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qPersonPerformanceX/Properties[ContractCount]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="FixedSize"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="20"
+                            ResultType=":Double" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
@@ -751,6 +945,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTEnotSpecified1"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE ?" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qCompanyPerformanceX/Properties[FTEnotSpecified]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVImmediate1"
                   Kind="Value"
                   DataType=":Decimal">
@@ -792,6 +1015,35 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="qCompanyPerformanceX/Properties[NVImmediate]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTEImmediate1"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE Now" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qCompanyPerformanceX/Properties[FTEImmediate]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -867,6 +1119,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTEThirtyToSixty1"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 30-60" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qCompanyPerformanceX/Properties[FTEThirtyToSixty]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVSixtyToNinty1"
                   Kind="Value"
                   DataType=":Decimal">
@@ -925,6 +1206,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTESixtyToNinty1"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 60-90" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qCompanyPerformanceX/Properties[FTESixtyToNinty]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVNintyPlus1"
                   Kind="Value"
                   DataType=":Decimal">
@@ -966,6 +1276,35 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="qCompanyPerformanceX/Properties[NVNintyPlus]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTENintyPlus1"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 90+" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qCompanyPerformanceX/Properties[FTENintyPlus]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -1169,6 +1508,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTEnotSpecified"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE ?" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qTotalPerformance/Properties[FTEnotSpecified]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVImmediate2"
                   Kind="Value"
                   DataType=":Decimal">
@@ -1210,6 +1578,35 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="qTotalPerformance/Properties[NVImmediate]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTEImmediate"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE Now" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qTotalPerformance/Properties[FTEImmediate]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -1285,6 +1682,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTEThirtyToSixty"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 30-60" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qTotalPerformance/Properties[FTEThirtyToSixty]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVSixtyToNinty2"
                   Kind="Value"
                   DataType=":Decimal">
@@ -1343,6 +1769,35 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="FTESixtyToNinty"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 60-90" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qTotalPerformance/Properties[FTESixtyToNinty]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="AVNintyPlus2"
                   Kind="Value"
                   DataType=":Decimal">
@@ -1384,6 +1839,35 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="qTotalPerformance/Properties[NVNintyPlus]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="FTENintyPlus"
+                  Kind="Value"
+                  DataType=":Decimal">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="FTE 90+" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="qTotalPerformance/Properties[FTENintyPlus]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -1558,38 +2042,17 @@
                   NodeType="And">
                   <BinaryExpression.Left>
                     <BinaryExpression
-                      NodeType="And">
+                      NodeType="NotContains">
                       <BinaryExpression.Left>
-                        <BinaryExpression
-                          NodeType="NotContains">
-                          <BinaryExpression.Left>
-                            <ChainExpression>
-                              <MemberExpression
-                                Member="qCompanyPerformanceX/Properties[Description]" />
-                            </ChainExpression>
-                          </BinaryExpression.Left>
-                          <BinaryExpression.Right>
-                            <ConstantExpression
-                              Value="No Bid"
-                              ResultType=":String" />
-                          </BinaryExpression.Right>
-                        </BinaryExpression>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="qCompanyPerformanceX/Properties[Description]" />
+                        </ChainExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
-                        <BinaryExpression
-                          NodeType="NotContains">
-                          <BinaryExpression.Left>
-                            <ChainExpression>
-                              <MemberExpression
-                                Member="qCompanyPerformanceX/Properties[Description]" />
-                            </ChainExpression>
-                          </BinaryExpression.Left>
-                          <BinaryExpression.Right>
-                            <ConstantExpression
-                              Value="RFI"
-                              ResultType=":String" />
-                          </BinaryExpression.Right>
-                        </BinaryExpression>
+                        <ConstantExpression
+                          Value="No Bid"
+                          ResultType=":String" />
                       </BinaryExpression.Right>
                     </BinaryExpression>
                   </BinaryExpression.Left>
@@ -1604,7 +2067,7 @@
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
                         <ConstantExpression
-                          Value="Won"
+                          Value="RFI"
                           ResultType=":String" />
                       </BinaryExpression.Right>
                     </BinaryExpression>
@@ -1644,22 +2107,7 @@
             Name="qTotalPerformancesQuery"
             ReturnType="qTotalPerformance*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <BinaryExpression
-                  NodeType="Equal">
-                  <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="qTotalPerformance/Properties[AVImmediate]" />
-                    </ChainExpression>
-                  </BinaryExpression.Left>
-                  <BinaryExpression.Right>
-                    <ConstantExpression
-                      Value="0"
-                      ResultType=":Decimal" />
-                  </BinaryExpression.Right>
-                </BinaryExpression>
-              </QueryFilterExpressionTree>
+              <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>

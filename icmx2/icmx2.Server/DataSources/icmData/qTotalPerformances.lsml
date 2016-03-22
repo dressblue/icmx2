@@ -22,7 +22,7 @@
           <Required />
           <DecimalConstraint
             Precision="38"
-            Scale="2" />
+            Scale="7" />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
@@ -77,7 +77,7 @@
           <Required />
           <DecimalConstraint
             Precision="38"
-            Scale="2" />
+            Scale="7" />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
@@ -191,6 +191,13 @@
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
+      <EntityProperty
+        Name="ContractCount"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -1135,10 +1142,15 @@
           Table="qTotalPerformance" />
         <IsView />
         <SsdlProperty
+          Name="ContractCount"
+          Nullable="True"
+          Type="int"
+          Property="qTotalPerformance/Properties[ContractCount]" />
+        <SsdlProperty
           Name="AVnotSpecified"
           Nullable="False"
           Precision="38"
-          Scale="2"
+          Scale="7"
           Type="decimal"
           Property="qTotalPerformance/Properties[AVnotSpecified]" />
         <SsdlProperty
@@ -1173,7 +1185,7 @@
           Name="NVnotSpecified"
           Nullable="False"
           Precision="38"
-          Scale="2"
+          Scale="7"
           Type="decimal"
           Property="qTotalPerformance/Properties[NVnotSpecified]" />
         <SsdlProperty

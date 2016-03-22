@@ -22,7 +22,7 @@
     <ApplicationServerType>Azure</ApplicationServerType>
     <AuthenticationType>None</AuthenticationType>
     <ApplicationName>icmx2</ApplicationName>
-    <AssemblyVersion>1.0.94.0</AssemblyVersion>
+    <AssemblyVersion>1.0.98.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\MSSQLLocalDB</SqlExpressInstanceName>
