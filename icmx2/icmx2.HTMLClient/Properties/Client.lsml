@@ -61,5 +61,8 @@
     <ApplicationNavigationMethodLink
       Name="link7"
       Method="!module/Methods[showBrowsePeopleSet]" />
+    <ApplicationNavigationMethodLink
+      Name="link8"
+      Method="!module/Methods[showBrowseStatusSet]" />
   </Application.NavigationItems>
 </Application>
