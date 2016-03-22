@@ -84,6 +84,9 @@
     <Content Include="Screens\Payees\ViewPayee.lsml.js">
       <DependentUpon>ViewPayee.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\PeopleSet\ViewPeopleSet.lsml.js">
+      <DependentUpon>ViewPeopleSet.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.3.js" />
     <Content Include="Scripts\datajs-1.1.3.min.js" />
     <Content Include="Scripts\jquery-2.1.3.intellisense.js" />
@@ -113,6 +116,7 @@
     <LightSwitchModel Include="Properties\icmData\Contracts.lsml" />
     <LightSwitchModel Include="Properties\icmData\PayeeAssignments.lsml" />
     <LightSwitchModel Include="Properties\icmData\Payees.lsml" />
+    <LightSwitchModel Include="Properties\icmData\PeopleSet.lsml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\ClientAgenciesSet\AddEditClientAgenciesSet.lsml" />
     <LightSwitchModel Include="Screens\ClientAgenciesSet\BrowseClientAgenciesSet.lsml" />
@@ -129,6 +133,9 @@
     <LightSwitchModel Include="Screens\Payees\AddEditPayee.lsml" />
     <LightSwitchModel Include="Screens\Payees\BrowsePayees.lsml" />
     <LightSwitchModel Include="Screens\Payees\ViewPayee.lsml" />
+    <LightSwitchModel Include="Screens\PeopleSet\AddEditPeopleSet.lsml" />
+    <LightSwitchModel Include="Screens\PeopleSet\BrowsePeopleSet.lsml" />
+    <LightSwitchModel Include="Screens\PeopleSet\ViewPeopleSet.lsml" />
     <LightSwitchModel Include="Screens\PersonPerformance.lsml" />
     <LightSwitchModel Include="Screens\Portfolio.lsml" />
   </ItemGroup>

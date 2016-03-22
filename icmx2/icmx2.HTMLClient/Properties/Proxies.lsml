@@ -175,12 +175,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:PeopleSet" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:PwinWeightsSet" />
     </EntityType.Attributes>
   </EntityType>
