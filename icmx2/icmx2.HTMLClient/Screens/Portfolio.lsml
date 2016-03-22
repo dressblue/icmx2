@@ -91,7 +91,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="125"
+                            Value="250"
                             ResultType=":Double" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -147,7 +147,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="150"
+                            Value="250"
                             ResultType=":Double" />
                         </ChainExpression>
                       </ScreenExpressionTree>
