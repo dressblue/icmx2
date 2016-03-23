@@ -64,5 +64,8 @@
     <ApplicationNavigationMethodLink
       Name="link8"
       Method="!module/Methods[showBrowseStatusSet]" />
+    <ApplicationNavigationMethodLink
+      Name="link9"
+      Method="!module/Methods[showBrowseCMs]" />
   </Application.NavigationItems>
 </Application>

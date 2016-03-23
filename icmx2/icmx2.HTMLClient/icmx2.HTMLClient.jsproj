@@ -72,6 +72,9 @@
     <Content Include="Screens\ClientAgenciesSet\ViewClientAgenciesSet.lsml.js">
       <DependentUpon>ViewClientAgenciesSet.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\CMs\ViewCM.lsml.js">
+      <DependentUpon>ViewCM.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\CompaniesSet\ViewCompaniesSet.lsml.js">
       <DependentUpon>ViewCompaniesSet.lsml</DependentUpon>
     </Content>
@@ -125,6 +128,9 @@
     <LightSwitchModel Include="Screens\ClientAgenciesSet\AddEditClientAgenciesSet.lsml" />
     <LightSwitchModel Include="Screens\ClientAgenciesSet\BrowseClientAgenciesSet.lsml" />
     <LightSwitchModel Include="Screens\ClientAgenciesSet\ViewClientAgenciesSet.lsml" />
+    <LightSwitchModel Include="Screens\CMs\AddEditCM.lsml" />
+    <LightSwitchModel Include="Screens\CMs\BrowseCMs.lsml" />
+    <LightSwitchModel Include="Screens\CMs\ViewCM.lsml" />
     <LightSwitchModel Include="Screens\CompaniesSet\AddEditCompaniesSet.lsml" />
     <LightSwitchModel Include="Screens\CompaniesSet\BrowseCompaniesSet.lsml" />
     <LightSwitchModel Include="Screens\CompaniesSet\ViewCompaniesSet.lsml" />

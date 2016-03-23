@@ -250,6 +250,9 @@
     <LightSwitchModel Include="DataSources\icmData\qTotalPerformances.lsml" />
     <LightSwitchModel Include="Properties\DataSources\icmData.lsml" />
     <LightSwitchModel Include="DataSources\icmData\qCapturePerformanceXes.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\qCaptureXes.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\OpportunityStatus.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\qCMTotals.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -282,7 +285,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9591/</IISUrl>
+          <IISUrl>http://localhost:50991/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -78,20 +78,20 @@
       </EntityProperty>
       <EntityProperty
         Name="StartDate"
-        PropertyType=":DateTime?">
+        PropertyType=":Date?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
-            Precision="3"
+            Precision="0"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="EndDate"
-        PropertyType=":DateTime?">
+        PropertyType=":Date?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
-            Precision="3"
+            Precision="0"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
@@ -791,27 +791,39 @@
       </EntityProperty>
       <EntityProperty
         Name="TotalContractValue"
-        PropertyType=":Decimal?">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="18"
             Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="$" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="FundedContractValue"
-        PropertyType=":Decimal?">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="18"
             Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="$" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="EffectiveDate"
-        PropertyType=":DateTime?">
+        PropertyType=":Date?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
             Precision="3"
@@ -1121,6 +1133,27 @@
         Association="PwinWeights_Contract"
         FromEnd="Contracts"
         ToEnd="PwinWeightsSet" />
+      <EntityProperty
+        Name="ExercisedValue"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="$" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="OpportunityStatu"
+        Association="Contract_OpportunityStatus"
+        FromEnd="Contracts"
+        ToEnd="OpportunityStatus" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -1566,12 +1599,12 @@
         <SsdlProperty
           Name="StartDate"
           Nullable="True"
-          Type="datetime"
+          Type="date"
           Property="Contract/Properties[StartDate]" />
         <SsdlProperty
           Name="EndDate"
           Nullable="True"
-          Type="datetime"
+          Type="date"
           Property="Contract/Properties[EndDate]" />
         <SsdlProperty
           Name="TCV"
@@ -2149,6 +2182,12 @@
           Nullable="True"
           Type="nchar"
           Property="Contract/Properties[xPrime]" />
+        <SsdlProperty
+          Name="ExercisedValue"
+          Nullable="True"
+          Scale="2"
+          Type="decimal"
+          Property="Contract/Properties[ExercisedValue]" />
         <SsdlForeignKeyProperty
           Name="ChargeCodes_Contract"
           Nullable="True"
@@ -2209,6 +2248,11 @@
           Nullable="True"
           Type="int"
           PropertyName="Contract_MasterContract" />
+        <SsdlForeignKeyProperty
+          Name="OpportunityStatus"
+          Nullable="True"
+          Type="int"
+          PropertyName="OpportunityStatus" />
         <SsdlForeignKeyProperty
           Name="Contract_People"
           Nullable="True"
