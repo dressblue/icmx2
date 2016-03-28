@@ -67,5 +67,11 @@
     <ApplicationNavigationMethodLink
       Name="link9"
       Method="!module/Methods[showBrowseCMs]" />
+    <ApplicationNavigationMethodLink
+      Name="link10"
+      Method="!module/Methods[showBrowseLaborCategories1]" />
+    <ApplicationNavigationMethodLink
+      Name="link11"
+      Method="!module/Methods[showBrowseLaborCategoryAssignmentsSet]" />
   </Application.NavigationItems>
 </Application>
