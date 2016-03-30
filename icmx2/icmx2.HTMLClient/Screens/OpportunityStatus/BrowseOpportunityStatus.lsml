@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseClientAgenciesSet">
+    Name="BrowseOpportunityStatus">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="icmData" />
       <DisplayName
-        Value="Clients" />
+        Value="O-Type" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,29 +22,29 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="ClientAgenciesSetList"
+            Name="OpportunityStatuList"
             Kind="Group">
             <ContentItem
-              Name="ClientAgenciesSet"
+              Name="OpportunityStatus"
               Kind="Collection"
-              DataType="CollectionView$ClientAgenciesSet"
+              DataType="CollectionView$OpportunityStatu"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Clients" />
+                  Value="OpportunityStatus" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                      Member="BrowseOpportunityStatus/Properties[OpportunityStatus]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="ClientAgenciesSet"
+                DataType="OpportunityStatu"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -56,27 +56,14 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="FullName"
+                  Name="Description"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FullName]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Acronym"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[Acronym]" />
+                          Member="OpportunityStatu/Properties[Description]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -86,39 +73,12 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="Small"
+                            Value="Large"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="FederalAgency1"
-                  Kind="Details"
-                  DataType="FederalAgency">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Federal Agency" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FederalAgency1]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="FederalAgency"
-                    Kind="Details"
-                    DataType="FederalAgency">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -139,16 +99,16 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewClientAgenciesSet]">
+                        Target="!module/Methods[showViewOpportunityStatu]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                            Collection="BrowseOpportunityStatus/Properties[OpportunityStatus]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
-                          Parameter="ClientAgenciesSet">
+                          Parameter="OpportunityStatu">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                              Member="BrowseOpportunityStatus/Properties[OpportunityStatus]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -161,7 +121,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddClientAgenciesSet"
+                Name="AddOpportunityStatu"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -173,12 +133,12 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditClientAgenciesSet]">
+                          Target="!module/Methods[showAddEditOpportunityStatu]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                              Collection="BrowseOpportunityStatus/Properties[OpportunityStatus]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditClientAgenciesSet]/Parameters[ClientAgenciesSet]" />
+                              TargetParameter="!module/Methods[showAddEditOpportunityStatu]/Parameters[OpportunityStatu]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>
@@ -197,7 +157,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchClientAgenciesSet"
+                Name="SearchOpportunityStatus"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -209,7 +169,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                          Member="BrowseOpportunityStatus/Properties[OpportunityStatus]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -274,27 +234,27 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="ClientAgenciesSet"
+        Name="OpportunityStatus"
         PageSize="45"
-        PropertyType="CollectionView$ClientAgenciesSet">
+        PropertyType="CollectionView$OpportunityStatu">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="ClientAgenciesSetQuery"
-            ReturnType="ClientAgenciesSet*">
+            Name="OpportunityStatusQuery"
+            ReturnType="OpportunityStatu*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="icmData/Members[ClientAgenciesSet]" />
+                  Member="icmData/Members[OpportunityStatus]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.SortCriteria>
               <SortCriterion>
                 <ChainExpression>
                   <MemberExpression
-                    Member="DisplayName" />
+                    Member="Description" />
                 </ChainExpression>
               </SortCriterion>
             </ScreenQueryDefinition.SortCriteria>
@@ -303,7 +263,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]/Query" />
+              Target="BrowseOpportunityStatus/Properties[OpportunityStatus]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -311,10 +271,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseClientAgenciesSet">
+      Name="showBrowseOpportunityStatus">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseClientAgenciesSet" />
+          TargetScreen="BrowseOpportunityStatus" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

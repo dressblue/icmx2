@@ -73,5 +73,11 @@
     <ApplicationNavigationMethodLink
       Name="link11"
       Method="!module/Methods[showBrowseLaborCategoryAssignmentsSet]" />
+    <ApplicationNavigationMethodLink
+      Name="link12"
+      Method="!module/Methods[showBrowseOpportunityStatus]" />
+    <ApplicationNavigationMethodLink
+      Name="link13"
+      Method="!module/Methods[showBrowseFederalAgencies]" />
   </Application.NavigationItems>
 </Application>

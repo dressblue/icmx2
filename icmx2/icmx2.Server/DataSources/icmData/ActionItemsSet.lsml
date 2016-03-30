@@ -126,19 +126,11 @@
         ToEnd="Contracts" />
       <EntityProperty
         Name="POC"
-        IsReadOnly="True"
-        PropertyType=":Int32">
+        PropertyType=":Int32?">
         <EntityProperty.Attributes>
-          <Computed />
           <NotSearchable />
-          <NotSortable />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="PeopleSet"
-        Association="POC"
-        FromEnd="ActionItemsSet"
-        ToEnd="PeopleSet" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -300,6 +292,11 @@
           StoreGeneratedPattern="Computed"
           Type="timestamp"
           Property="ActionItemsSet/Properties[RowVersion]" />
+        <SsdlProperty
+          Name="POC"
+          Nullable="True"
+          Type="int"
+          Property="ActionItemsSet/Properties[POC]" />
         <SsdlForeignKeyProperty
           Name="ActionItems_ActionItemStatus"
           Nullable="False"
@@ -310,11 +307,6 @@
           Nullable="False"
           Type="int"
           PropertyName="ActionItems_Contract" />
-        <SsdlForeignKeyProperty
-          Name="POC"
-          Nullable="True"
-          Type="int"
-          PropertyName="POC" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

@@ -30,7 +30,7 @@
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
-            Value="255" />
+            Value="768" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -341,11 +341,6 @@
             Value="100" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="ActionItemsSet"
-        Association="POC"
-        FromEnd="PeopleSet"
-        ToEnd="ActionItemsSet" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -655,31 +650,7 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="POC"
-      Association="POC">
-      <AssociationSetEnd
-        Name="PeopleSet"
-        EntitySet="PeopleSet" />
-      <AssociationSetEnd
-        Name="ActionItemsSet"
-        EntitySet="ActionItemsSet" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="POC">
-    <AssociationEnd
-      Name="PeopleSet"
-      EntityType="PeopleSet">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="ActionItemsSet"
-      Multiplicity="Many"
-      EntityType="ActionItemsSet" />
-  </Association>
   <DataService
     Name="icmDataDataService">
     <DataService.Attributes>
@@ -698,9 +669,10 @@
           Type="int"
           Property="PeopleSet/Properties[Id]" />
         <SsdlProperty
-          MaxLength="255"
+          MaxLength="768"
           Name="DisplayName"
           Nullable="True"
+          StoreGeneratedPattern="Computed"
           Type="nvarchar"
           Property="PeopleSet/Properties[DisplayName]" />
         <SsdlProperty
@@ -1069,27 +1041,6 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="PayeeAssignment_People" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="POC">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="POC" />
-        <SsdlAssociationSetEnd
-          End="icmData/Members[POC]/Members[PeopleSet]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="icmData/Members[POC]/Members[ActionItemsSet]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="POC" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditClientAgenciesSet">
+    Name="AddEditOpportunityStatu">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="icmData" />
       <DisplayName
-        Value="ClientAgenciesSet" />
+        Value="OpportunityStatu" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="ClientAgenciesSet"
+              DataType="OpportunityStatu"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,78 +42,25 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                      Member="AddEditOpportunityStatu/Properties[OpportunityStatu]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="left"
+                Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="DisplayName"
+                  Name="Description"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ClientAgenciesSet/Properties[DisplayName]" />
+                          Member="OpportunityStatu/Properties[Description]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Acronym"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[Acronym]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="FullName"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FullName]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="FederalAgency1"
-                  Kind="Details"
-                  DataType="FederalAgency">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Federal Agency" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FederalAgency1]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="FederalAgency"
-                    Kind="Details"
-                    DataType="FederalAgency">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -195,8 +142,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="ClientAgenciesSet"
-        PropertyType="ClientAgenciesSet">
+        Name="OpportunityStatu"
+        PropertyType="OpportunityStatu">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -205,14 +152,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditClientAgenciesSet">
+      Name="showAddEditOpportunityStatu">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditClientAgenciesSet" />
+          TargetScreen="AddEditOpportunityStatu" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="ClientAgenciesSet"
-        ParameterType="ClientAgenciesSet" />
+        Name="OpportunityStatu"
+        ParameterType="OpportunityStatu" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

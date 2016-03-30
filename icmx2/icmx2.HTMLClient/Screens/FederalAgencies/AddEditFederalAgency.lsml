@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditClientAgenciesSet">
+    Name="AddEditFederalAgency">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="icmData" />
       <DisplayName
-        Value="ClientAgenciesSet" />
+        Value="FederalAgency" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="ClientAgenciesSet"
+              DataType="FederalAgency"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,7 +42,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                      Member="AddEditFederalAgency/Properties[FederalAgency]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -50,71 +50,44 @@
                 Name="left"
                 Kind="Group">
                 <ContentItem
-                  Name="DisplayName"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[DisplayName]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Acronym"
+                  Name="Name"
                   Kind="Value"
                   DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ClientAgenciesSet/Properties[Acronym]" />
+                          Member="FederalAgency/Properties[Name]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-                <ContentItem
-                  Name="FullName"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FullName]" />
+                        <ConstantExpression
+                          Value="200"
+                          ResultType=":Double" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="FederalAgency1"
-                  Kind="Details"
-                  DataType="FederalAgency">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Federal Agency" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FederalAgency1]" />
+                        <ConstantExpression
+                          Value="400"
+                          ResultType=":Double" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="FederalAgency"
-                    Kind="Details"
-                    DataType="FederalAgency">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="right"
+                Kind="Group">
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
@@ -195,8 +168,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="ClientAgenciesSet"
-        PropertyType="ClientAgenciesSet">
+        Name="FederalAgency"
+        PropertyType="FederalAgency">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -205,14 +178,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditClientAgenciesSet">
+      Name="showAddEditFederalAgency">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditClientAgenciesSet" />
+          TargetScreen="AddEditFederalAgency" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="ClientAgenciesSet"
-        ParameterType="ClientAgenciesSet" />
+        Name="FederalAgency"
+        ParameterType="FederalAgency" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

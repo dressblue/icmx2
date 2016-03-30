@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="OpportunityStatu">
+    Name="FederalAgency">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -17,41 +17,68 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
+        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
+          <Hidden />
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Description"
-        PropertyType=":String?">
+        Name="Name"
+        PropertyType=":String">
         <EntityProperty.Attributes>
+          <Required />
           <MaxLength
-            Value="50" />
+            Value="100" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Contracts"
-        Association="Contract_OpportunityStatus"
-        FromEnd="OpportunityStatus"
-        ToEnd="Contracts" />
+        Name="ClientAgenciesSet"
+        Association="FederalAgency1"
+        FromEnd="FederalAgencies"
+        ToEnd="ClientAgenciesSet" />
     </EntityType.Properties>
   </EntityType>
+  <Association
+    Name="FederalAgency1">
+    <AssociationEnd
+      Name="FederalAgencies"
+      EntityType="FederalAgency">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ClientAgenciesSet"
+      Multiplicity="Many"
+      EntityType="ClientAgenciesSet" />
+  </Association>
   <EntityContainer
     Name="icmData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="OpportunityStatus"
+      Name="FederalAgencies"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="OpportunityStatu" />
+      EntityType="FederalAgency" />
+    <AssociationSet
+      Name="FederalAgency"
+      Association="FederalAgency1">
+      <AssociationSetEnd
+        Name="FederalAgencies"
+        EntitySet="FederalAgencies" />
+      <AssociationSetEnd
+        Name="ClientAgenciesSet"
+        EntitySet="ClientAgenciesSet" />
+    </AssociationSet>
     <QueryOperation
-      Name="OpportunityStatus_Single"
-      ReturnType="OpportunityStatu">
+      Name="FederalAgencies_Single"
+      ReturnType="FederalAgency">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -77,7 +104,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="OpportunityStatus" />
+            Member="FederalAgencies" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -90,8 +117,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="OpportunityStatus_SingleOrDefault"
-      ReturnType="OpportunityStatu">
+      Name="FederalAgencies_SingleOrDefault"
+      ReturnType="FederalAgency">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -117,7 +144,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="OpportunityStatus" />
+            Member="FederalAgencies" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -129,73 +156,49 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="Contract_OpportunityStatus"
-      Association="Contract_OpportunityStatus">
-      <AssociationSetEnd
-        Name="OpportunityStatus"
-        EntitySet="OpportunityStatus" />
-      <AssociationSetEnd
-        Name="Contracts"
-        EntitySet="Contracts" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="Contract_OpportunityStatus">
-    <AssociationEnd
-      Name="OpportunityStatus"
-      EntityType="OpportunityStatu">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Contracts"
-      Multiplicity="Many"
-      EntityType="Contract" />
-  </Association>
   <DataService
     Name="icmDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="OpportunityStatus">
+      EntitySet="FederalAgencies">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="OpportunityStatus" />
+          Table="FederalAgencies" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="OpportunityStatu/Properties[Id]" />
+          Property="FederalAgency/Properties[Id]" />
         <SsdlProperty
-          MaxLength="50"
-          Name="Description"
-          Nullable="True"
+          MaxLength="100"
+          Name="Name"
+          Nullable="False"
           Type="nvarchar"
-          Property="OpportunityStatu/Properties[Description]" />
+          Property="FederalAgency/Properties[Name]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="Contract_OpportunityStatus">
+      AssociationSet="FederalAgency">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="Contract_OpportunityStatus" />
+          Name="FederalAgency" />
         <SsdlAssociationSetEnd
-          End="icmData/Members[Contract_OpportunityStatus]/Members[OpportunityStatus]">
+          End="icmData/Members[FederalAgency]/Members[FederalAgencies]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="icmData/Members[Contract_OpportunityStatus]/Members[Contracts]">
+          End="icmData/Members[FederalAgency]/Members[ClientAgenciesSet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="OpportunityStatus" />
+              Name="FederalAgency" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

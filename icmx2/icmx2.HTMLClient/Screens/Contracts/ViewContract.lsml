@@ -462,6 +462,33 @@
                         </ControlPropertySource>
                       </ContentItem.PropertySources>
                     </ContentItem>
+                    <ContentItem
+                      Name="OpportunityStatu"
+                      Kind="Details"
+                      DataType="OpportunityStatu">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="O-Type" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Contract/Properties[OpportunityStatu]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="OpportunityStatu1"
+                        Kind="Details"
+                        DataType="OpportunityStatu">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                    </ContentItem>
                   </ContentItem>
                 </ContentItem>
                 <ContentItem

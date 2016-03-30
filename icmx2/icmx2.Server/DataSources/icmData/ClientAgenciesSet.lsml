@@ -116,6 +116,11 @@
         Association="Contract_client"
         FromEnd="ClientAgenciesSet"
         ToEnd="Contracts" />
+      <NavigationProperty
+        Name="FederalAgency1"
+        Association="FederalAgency1"
+        FromEnd="ClientAgenciesSet"
+        ToEnd="FederalAgencies" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -346,6 +351,11 @@
           StoreGeneratedPattern="Computed"
           Type="timestamp"
           Property="ClientAgenciesSet/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="FederalAgency"
+          Nullable="True"
+          Type="int"
+          PropertyName="FederalAgency" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

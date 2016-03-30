@@ -783,6 +783,35 @@
                       Value="Web Links" />
                   </ContentItem.Attributes>
                   <ContentItem
+                    Name="Contract_OpportunityStatu"
+                    Kind="Details"
+                    DataType="OpportunityStatu">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="O-Type" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="AddEditContract/Properties[Contract]" />
+                          <MemberExpression
+                            Member="OpportunityStatu" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="OpportunityStatu"
+                      Kind="Details"
+                      DataType="OpportunityStatu">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
                     Name="GovWinLink"
                     Kind="Value"
                     DataType=":String?">
@@ -808,21 +837,6 @@
                             Member="AddEditContract/Properties[Contract]" />
                           <MemberExpression
                             Member="WebLink1" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="WebLink2"
-                    Kind="Value"
-                    DataType=":String?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="AddEditContract/Properties[Contract]" />
-                          <MemberExpression
-                            Member="WebLink2" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>

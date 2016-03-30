@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseClientAgenciesSet">
+    Name="ViewFederalAgency">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="icmData" />
       <DisplayName
-        Value="Clients" />
+        Value="FederalAgency" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,22 +22,27 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="ClientAgenciesSetList"
-            Kind="Group">
+            Name="Details"
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Details" />
+            </ContentItem.Attributes>
             <ContentItem
-              Name="ClientAgenciesSet"
+              Name="ClientAgenciesSet1"
               Kind="Collection"
               DataType="CollectionView$ClientAgenciesSet"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Clients" />
+                  Value="ClientAgenciesSet" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
+                      Member="ViewFederalAgency/Properties[ClientAgenciesSet]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -56,17 +61,29 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="FullName"
+                  Name="DisplayName"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FullName]" />
+                          Member="ClientAgenciesSet/Properties[DisplayName]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Large"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="Acronym"
@@ -94,31 +111,29 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="FederalAgency1"
-                  Kind="Details"
-                  DataType="FederalAgency">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Federal Agency" />
-                  </ContentItem.Attributes>
+                  Name="FullName"
+                  Kind="Value"
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ClientAgenciesSet/Properties[FederalAgency1]" />
+                          Member="ClientAgenciesSet/Properties[FullName]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem
-                    Name="FederalAgency"
-                    Kind="Details"
-                    DataType="FederalAgency">
-                    <ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
                       <ScreenExpressionTree>
-                        <ChainExpression />
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
                       </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -138,22 +153,10 @@
                   Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
                   <ScreenExpressionTree>
                     <ChainExpression>
+                      <MemberExpression
+                        Member="ViewFederalAgency/Properties[ClientAgenciesSet]" />
                       <CallExpression
-                        Target="!module/Methods[showViewClientAgenciesSet]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
-                        </CallExpression.Attributes>
-                        <ArgumentExpression
-                          Parameter="ClientAgenciesSet">
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
-                            <MemberExpression
-                              Member="selectedItem" />
-                          </ChainExpression>
-                        </ArgumentExpression>
-                      </CallExpression>
+                        Target="viewSelected" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -161,11 +164,11 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddClientAgenciesSet"
+                Name="EditFederalAgency"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Add" />
+                    Value="Edit" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -173,13 +176,14 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditClientAgenciesSet]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditClientAgenciesSet]/Parameters[ClientAgenciesSet]" />
-                          </CallExpression.Attributes>
+                          Target="!module/Methods[showAddEditFederalAgency]">
+                          <ArgumentExpression
+                            Parameter="FederalAgency">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="ViewFederalAgency/Properties[FederalAgency]" />
+                            </ChainExpression>
+                          </ArgumentExpression>
                         </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
@@ -189,38 +193,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="msls-add"
-                          ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="SearchClientAgenciesSet"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Search" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]" />
-                        <CallExpression
-                          Target="showSearch" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-search"
+                          Value="msls-edit"
                           ResultType="Microsoft.LightSwitch:String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
@@ -273,9 +246,16 @@
       </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
+      <ScreenProperty
+        Name="FederalAgency"
+        PropertyType="FederalAgency">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
       <ScreenCollectionProperty
         Name="ClientAgenciesSet"
-        PageSize="45"
+        PageSize="15"
         PropertyType="CollectionView$ClientAgenciesSet">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -286,24 +266,20 @@
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="icmData/Members[ClientAgenciesSet]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-            <ScreenQueryDefinition.SortCriteria>
-              <SortCriterion>
                 <ChainExpression>
                   <MemberExpression
-                    Member="DisplayName" />
+                    Member="ViewFederalAgency/Properties[FederalAgency]" />
+                  <MemberExpression
+                    Member="ClientAgenciesSet" />
                 </ChainExpression>
-              </SortCriterion>
-            </ScreenQueryDefinition.SortCriteria>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseClientAgenciesSet/Properties[ClientAgenciesSet]/Query" />
+              Target="ViewFederalAgency/Properties[ClientAgenciesSet]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -311,11 +287,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseClientAgenciesSet">
+      Name="showViewFederalAgency">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseClientAgenciesSet" />
+          TargetScreen="ViewFederalAgency" />
       </ApplicationMethod.Attributes>
+      <ApplicationMethodParameter
+        Name="FederalAgency"
+        ParameterType="FederalAgency" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>
