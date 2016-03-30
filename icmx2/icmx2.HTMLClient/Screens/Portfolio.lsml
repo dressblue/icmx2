@@ -45,6 +45,65 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
+                  Name="OpportunityStatu"
+                  Kind="Details"
+                  DataType="OpportunityStatu">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="O-Type" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Contract/Properties[OpportunityStatu]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="OpportunityStatu1"
+                    Kind="Details"
+                    DataType="OpportunityStatu">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="FixedSize"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="70"
+                            ResultType=":Double" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
                   Name="ClientAgenciesSet"
                   Kind="Details"
                   DataType="ClientAgenciesSet"
@@ -371,7 +430,7 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="AnticipatedValue"
+                  Name="DisplayAnticipatedValue"
                   Kind="Value"
                   DataType=":Decimal?">
                   <ContentItem.Attributes>
@@ -382,7 +441,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Contract/Properties[AnticipatedValue]" />
+                          Member="Contract/Properties[DisplayAnticipatedValue]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -394,16 +453,6 @@
                           <ConstantExpression
                             Value="Small"
                             ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="50"
-                            ResultType=":Double" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
@@ -1105,6 +1154,14 @@
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.SortCriteria>
+              <SortCriterion>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="OpportunityStatu" />
+                  <MemberExpression
+                    Member="Description" />
+                </ChainExpression>
+              </SortCriterion>
               <SortCriterion>
                 <ChainExpression>
                   <MemberExpression

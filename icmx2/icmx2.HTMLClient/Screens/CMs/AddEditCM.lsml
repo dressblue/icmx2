@@ -375,7 +375,7 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  Name="PeopleSet"
+                  Name="PeopleSet2"
                   Kind="Details"
                   DataType="PeopleSet">
                   <ContentItem.Attributes>
@@ -386,12 +386,58 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
+                          Member="Contract/Properties[PeopleSet2]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="PeopleSet1"
+                    Kind="Details"
+                    DataType="PeopleSet">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="PeopleSet"
+                  Kind="Details"
+                  DataType="PeopleSet">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
                           Member="Contract/Properties[PeopleSet]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="RowTemplate12"
+                    Name="PeopleSet3"
+                    Kind="Details"
+                    DataType="PeopleSet">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="PeopleSet11"
+                  Kind="Details"
+                  DataType="PeopleSet">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Contract/Properties[PeopleSet1]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="PeopleSet4"
                     Kind="Details"
                     DataType="PeopleSet">
                     <ContentItem.DataSource>

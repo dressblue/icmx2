@@ -353,7 +353,7 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                Name="PeopleSet"
+                Name="Contract_PeopleSet2"
                 Kind="Details"
                 DataType="PeopleSet">
                 <ContentItem.Attributes>
@@ -366,12 +366,12 @@
                       <MemberExpression
                         Member="ViewCM/Properties[Contract]" />
                       <MemberExpression
-                        Member="PeopleSet" />
+                        Member="PeopleSet2" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="RowTemplate12"
+                  Name="PeopleSet1"
                   Kind="Details"
                   DataType="PeopleSet">
                   <ContentItem.DataSource>

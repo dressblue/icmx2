@@ -71,7 +71,7 @@
         PropertyType=":DateTime?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
-            Precision="3"
+            Precision="0"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
@@ -211,8 +211,8 @@
         PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <DecimalConstraint
-            Precision="18"
-            Scale="2" />
+            Precision="38"
+            Scale="11" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -949,7 +949,8 @@
         <EntityProperty.Attributes>
           <MaxLength
             IsFixedLength="True"
-            Value="10" />
+            Value="2" />
+          <AnsiConstraint />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -958,7 +959,8 @@
         <EntityProperty.Attributes>
           <MaxLength
             IsFixedLength="True"
-            Value="10" />
+            Value="2" />
+          <AnsiConstraint />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -967,7 +969,8 @@
         <EntityProperty.Attributes>
           <MaxLength
             IsFixedLength="True"
-            Value="10" />
+            Value="2" />
+          <AnsiConstraint />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1154,6 +1157,22 @@
         Association="Contract_OpportunityStatus"
         FromEnd="Contracts"
         ToEnd="OpportunityStatus" />
+      <EntityProperty
+        Name="DisplayAnticipatedValue"
+        IsReadOnly="True"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="23"
+            Scale="7" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="PeopleSet2"
+        Association="OperationalLead"
+        FromEnd="Contracts"
+        ToEnd="PeopleSet" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -1594,7 +1613,7 @@
         <SsdlProperty
           Name="AwardDate"
           Nullable="True"
-          Type="datetime"
+          Type="date"
           Property="Contract/Properties[AwardDate]" />
         <SsdlProperty
           Name="StartDate"
@@ -1671,6 +1690,14 @@
           Type="decimal"
           Property="Contract/Properties[AnticipatedValue]" />
         <SsdlProperty
+          Name="DisplayAnticipatedValue"
+          Nullable="True"
+          Precision="23"
+          Scale="7"
+          StoreGeneratedPattern="Computed"
+          Type="decimal"
+          Property="Contract/Properties[DisplayAnticipatedValue]" />
+        <SsdlProperty
           Name="PotentialWinPercentage"
           Nullable="True"
           Scale="9"
@@ -1679,7 +1706,9 @@
         <SsdlProperty
           Name="NormalizedAnticipatedValue"
           Nullable="True"
-          Scale="2"
+          Precision="38"
+          Scale="11"
+          StoreGeneratedPattern="Computed"
           Type="decimal"
           Property="Contract/Properties[NormalizedAnticipatedValue]" />
         <SsdlProperty
@@ -2159,22 +2188,25 @@
           Type="bit"
           Property="Contract/Properties[Gate3Completed]" />
         <SsdlProperty
-          MaxLength="10"
+          MaxLength="2"
           Name="xG1"
           Nullable="True"
-          Type="nchar"
+          StoreGeneratedPattern="Computed"
+          Type="char"
           Property="Contract/Properties[xG1]" />
         <SsdlProperty
-          MaxLength="10"
+          MaxLength="2"
           Name="xG2"
           Nullable="True"
-          Type="nchar"
+          StoreGeneratedPattern="Computed"
+          Type="char"
           Property="Contract/Properties[xG2]" />
         <SsdlProperty
-          MaxLength="10"
+          MaxLength="2"
           Name="xG3"
           Nullable="True"
-          Type="nchar"
+          StoreGeneratedPattern="Computed"
+          Type="char"
           Property="Contract/Properties[xG3]" />
         <SsdlProperty
           MaxLength="10"
@@ -2268,6 +2300,11 @@
           Nullable="True"
           Type="int"
           PropertyName="EvaluationType_Contract" />
+        <SsdlForeignKeyProperty
+          Name="OperationalLead"
+          Nullable="True"
+          Type="int"
+          PropertyName="OperationalLead" />
         <SsdlForeignKeyProperty
           Name="PwinWeights_Contract"
           Nullable="True"

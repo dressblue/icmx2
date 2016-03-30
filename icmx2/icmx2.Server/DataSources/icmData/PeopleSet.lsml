@@ -341,6 +341,11 @@
             Value="100" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="Contracts2"
+        Association="OperationalLead"
+        FromEnd="PeopleSet"
+        ToEnd="Contracts" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -650,7 +655,31 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="OperationalLead"
+      Association="OperationalLead">
+      <AssociationSetEnd
+        Name="PeopleSet"
+        EntitySet="PeopleSet" />
+      <AssociationSetEnd
+        Name="Contracts"
+        EntitySet="Contracts" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="OperationalLead">
+    <AssociationEnd
+      Name="PeopleSet"
+      EntityType="PeopleSet">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Contracts"
+      Multiplicity="Many"
+      EntityType="Contract" />
+  </Association>
   <DataService
     Name="icmDataDataService">
     <DataService.Attributes>
@@ -978,6 +1007,27 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Modification_People1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="OperationalLead">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OperationalLead" />
+        <SsdlAssociationSetEnd
+          End="icmData/Members[OperationalLead]/Members[PeopleSet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="icmData/Members[OperationalLead]/Members[Contracts]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OperationalLead" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

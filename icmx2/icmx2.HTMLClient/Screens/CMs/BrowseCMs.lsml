@@ -945,6 +945,33 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="PeopleSet2"
+                  Kind="Details"
+                  DataType="PeopleSet">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Owner" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Contract/Properties[PeopleSet2]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="PeopleSet3"
+                    Kind="Details"
+                    DataType="PeopleSet">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
                   Name="PeopleSet"
                   Kind="Details"
                   DataType="PeopleSet">

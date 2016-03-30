@@ -586,4 +586,10 @@
         Target="ServiceInterface:FederalAgency1" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:OperationalLead" />
+    </Association.Attributes>
+  </Association>
 </Application>
