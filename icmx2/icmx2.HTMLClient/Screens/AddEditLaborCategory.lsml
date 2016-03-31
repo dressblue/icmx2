@@ -28,6 +28,33 @@
                 Value="Details" />
             </ContentItem.Attributes>
             <ContentItem
+              Name="LaborCategoryAssignmentsSet_selectedItem_PeopleSet"
+              Kind="Details"
+              DataType="PeopleSet">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="AddEditLaborCategory/Properties[LaborCategoryAssignmentsSet]" />
+                    <MemberExpression
+                      Member="selectedItem" />
+                    <MemberExpression
+                      Member="PeopleSet" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="PeopleSet"
+                Kind="Details"
+                DataType="PeopleSet">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
               Name="columns"
               Kind="Details"
               DataType="LaborCategory"
@@ -332,6 +359,51 @@
           <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="LaborCategoryAssignmentsSet"
+        PageSize="45"
+        PropertyType="CollectionView$LaborCategoryAssignmentsSet">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LaborCategoryAssignmentsSetQuery"
+            ReturnType="LaborCategoryAssignmentsSet*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LaborCategoryAssignmentsSet/Properties[Active]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean?" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="AddEditLaborCategory/Properties[LaborCategory]" />
+                  <MemberExpression
+                    Member="LaborCategoryAssignmentsSet" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="AddEditLaborCategory/Properties[LaborCategoryAssignmentsSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

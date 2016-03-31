@@ -1186,6 +1186,51 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="ContractAccoladesSet"
+        PageSize="45"
+        PropertyType="CollectionView$ContractAccoladesSet">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ContractAccoladesSetQuery"
+            ReturnType="ContractAccoladesSet*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Portfolio/Properties[Contracts]" />
+                  <MemberExpression
+                    Member="selectedItem" />
+                  <MemberExpression
+                    Member="ContractAccoladesSet" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Portfolio/Properties[ContractAccoladesSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="FederalAgency"
+        PropertyType="FederalAgency">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="icmData/Members[FederalAgencies_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="Id" />
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
