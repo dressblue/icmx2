@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="LaborCategoryAssignmentsSet">
+    Name="LaborDataCollector">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -26,105 +26,47 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="LcatStartDate"
-        PropertyType=":DateTime?">
+        Name="Hours"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="10"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DateStart"
+        PropertyType=":Date?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
-            Precision="3"
+            Precision="0"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="LcatEndDate"
-        PropertyType=":DateTime?">
+        Name="DateEnd"
+        PropertyType=":Date?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
-            Precision="3"
+            Precision="0"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Active"
-        PropertyType=":Boolean?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Candidate"
-        PropertyType=":Boolean?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="CreatedBy"
+        Name="Notes"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
-            Value="255" />
+            Value="200" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Created"
-        PropertyType=":DateTimeOffset?">
+        Name="LcatAssignmentKey"
+        PropertyType=":Int32?">
         <EntityProperty.Attributes>
-          <DateTimeConstraint
-            Precision="7"
-            PreserveSeconds="True" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="ModifiedBy"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Modified"
-        PropertyType=":DateTimeOffset?">
-        <EntityProperty.Attributes>
-          <DateTimeConstraint
-            Precision="7"
-            PreserveSeconds="True" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="RowVersion"
-        IsReadOnly="True"
-        PropertyType=":RowVersion">
-        <EntityProperty.Attributes>
-          <Hidden />
-          <UseForConcurrency />
-          <Required />
-          <MaxLength
-            IsFixedLength="True"
-            Value="8" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Name="LaborCategory"
-        Association="LaborCategoryAssignments_LaborCategory"
-        FromEnd="LaborCategoryAssignmentsSet"
-        ToEnd="LaborCategories" />
-      <NavigationProperty
-        Name="PeopleSet"
-        Association="LaborCategoryAssignments_People"
-        FromEnd="LaborCategoryAssignmentsSet"
-        ToEnd="PeopleSet" />
-      <EntityProperty
-        Name="LaborCategoryIndex"
-        IsReadOnly="True"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -136,14 +78,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="LaborCategoryAssignmentsSet"
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="LaborCategoryAssignmentsSet" />
+      Name="LaborDataCollectors"
+      EntityType="LaborDataCollector" />
     <QueryOperation
-      Name="LaborCategoryAssignmentsSet_Single"
-      ReturnType="LaborCategoryAssignmentsSet">
+      Name="LaborDataCollectors_Single"
+      ReturnType="LaborDataCollector">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -169,7 +108,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="LaborCategoryAssignmentsSet" />
+            Member="LaborDataCollectors" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -182,8 +121,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="LaborCategoryAssignmentsSet_SingleOrDefault"
-      ReturnType="LaborCategoryAssignmentsSet">
+      Name="LaborDataCollectors_SingleOrDefault"
+      ReturnType="LaborDataCollector">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -209,7 +148,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="LaborCategoryAssignmentsSet" />
+            Member="LaborDataCollectors" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -228,81 +167,45 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="LaborCategoryAssignmentsSet">
+      EntitySet="LaborDataCollectors">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="LaborCategoryAssignmentsSet" />
+          Table="LaborDataCollector" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="LaborCategoryAssignmentsSet/Properties[Id]" />
+          Property="LaborDataCollector/Properties[Id]" />
         <SsdlProperty
-          Name="LcatStartDate"
+          Name="Hours"
           Nullable="True"
-          Type="datetime"
-          Property="LaborCategoryAssignmentsSet/Properties[LcatStartDate]" />
+          Precision="10"
+          Scale="2"
+          Type="decimal"
+          Property="LaborDataCollector/Properties[Hours]" />
         <SsdlProperty
-          Name="LcatEndDate"
+          Name="DateStart"
           Nullable="True"
-          Type="datetime"
-          Property="LaborCategoryAssignmentsSet/Properties[LcatEndDate]" />
+          Type="date"
+          Property="LaborDataCollector/Properties[DateStart]" />
         <SsdlProperty
-          Name="Active"
+          Name="DateEnd"
           Nullable="True"
-          Type="bit"
-          Property="LaborCategoryAssignmentsSet/Properties[Active]" />
+          Type="date"
+          Property="LaborDataCollector/Properties[DateEnd]" />
         <SsdlProperty
-          Name="Candidate"
-          Nullable="True"
-          Type="bit"
-          Property="LaborCategoryAssignmentsSet/Properties[Candidate]" />
-        <SsdlProperty
-          MaxLength="255"
-          Name="CreatedBy"
+          MaxLength="200"
+          Name="Notes"
           Nullable="True"
           Type="nvarchar"
-          Property="LaborCategoryAssignmentsSet/Properties[CreatedBy]" />
+          Property="LaborDataCollector/Properties[Notes]" />
         <SsdlProperty
-          Name="Created"
-          Nullable="True"
-          Type="datetimeoffset"
-          Property="LaborCategoryAssignmentsSet/Properties[Created]" />
-        <SsdlProperty
-          MaxLength="255"
-          Name="ModifiedBy"
-          Nullable="True"
-          Type="nvarchar"
-          Property="LaborCategoryAssignmentsSet/Properties[ModifiedBy]" />
-        <SsdlProperty
-          Name="Modified"
-          Nullable="True"
-          Type="datetimeoffset"
-          Property="LaborCategoryAssignmentsSet/Properties[Modified]" />
-        <SsdlProperty
-          Name="RowVersion"
-          Nullable="False"
-          StoreGeneratedPattern="Computed"
-          Type="timestamp"
-          Property="LaborCategoryAssignmentsSet/Properties[RowVersion]" />
-        <SsdlProperty
-          Name="LaborCategoryIndex"
-          Nullable="False"
-          StoreGeneratedPattern="Computed"
-          Type="int"
-          Property="LaborCategoryAssignmentsSet/Properties[LaborCategoryIndex]" />
-        <SsdlForeignKeyProperty
-          Name="LaborCategoryAssignments_LaborCategory"
-          Nullable="False"
-          Type="int"
-          PropertyName="LaborCategoryAssignments_LaborCategory" />
-        <SsdlForeignKeyProperty
-          Name="LaborCategoryAssignments_People"
+          Name="LcatAssignmentKey"
           Nullable="True"
           Type="int"
-          PropertyName="LaborCategoryAssignments_People" />
+          Property="LaborDataCollector/Properties[LcatAssignmentKey]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

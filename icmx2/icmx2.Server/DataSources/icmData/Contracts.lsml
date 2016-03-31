@@ -979,7 +979,8 @@
         <EntityProperty.Attributes>
           <MaxLength
             IsFixedLength="True"
-            Value="10" />
+            Value="3" />
+          <AnsiConstraint />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2209,10 +2210,11 @@
           Type="char"
           Property="Contract/Properties[xG3]" />
         <SsdlProperty
-          MaxLength="10"
+          MaxLength="3"
           Name="xPrime"
           Nullable="True"
-          Type="nchar"
+          StoreGeneratedPattern="Computed"
+          Type="char"
           Property="Contract/Properties[xPrime]" />
         <SsdlProperty
           Name="ExercisedValue"

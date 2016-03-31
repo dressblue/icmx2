@@ -31,8 +31,8 @@
     <WCFRIASERVICESSDKPath Condition=" '$(WCFRIASERVICESSDKPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\WCFRIAServices\v1.0@InstallPath)</WCFRIASERVICESSDKPath>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
@@ -200,6 +200,8 @@
     </LightSwitchModel>
   </ItemGroup>
   <ItemGroup>
+    <_ServerFile Include="LogIn.aspx" />
+    <_ServerFile Include="LogOut.aspx" />
     <Content Include="Web.config" />
     <LightSwitchModel Include="DataSources\icmData\ActionItemsSet.lsml" />
     <LightSwitchModel Include="DataSources\icmData\ActionItemStatusSet.lsml" />
@@ -257,6 +259,11 @@
       <DependentUpon>CapturePerformances.lsml</DependentUpon>
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\icmData\FederalAgencies.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\LaborDataCollectors.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\qDataCollectors.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\LcatLookup.lsml">
+      <DependentUpon>LaborCategoryAssignmentsSet.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -289,7 +296,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56989/</IISUrl>
+          <IISUrl>http://localhost:63551/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -592,4 +592,16 @@
         Target="ServiceInterface:OperationalLead" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:LaborDataCollector" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:qDataCollector" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

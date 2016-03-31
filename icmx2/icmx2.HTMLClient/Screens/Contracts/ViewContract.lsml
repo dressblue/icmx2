@@ -1437,18 +1437,6 @@
                 </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem.CommandItems>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="1400"
-                      ResultType=":Double" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
           </ContentItem>
           <ContentItem
             Name="ActionItemsSet"
@@ -2305,7 +2293,7 @@
           <ContentItem
             Name="LaborCategories"
             Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
             <ContentItem.Attributes>
               <DisplayName
                 Value="Lcats" />
@@ -2314,7 +2302,7 @@
               Name="LaborCategories1"
               Kind="Collection"
               DataType="CollectionView$LaborCategory"
-              View="Microsoft.LightSwitch.MobileWeb:TileList">
+              View="Microsoft.LightSwitch.MobileWeb:Table">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="LaborCategories" />
@@ -2359,7 +2347,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="Large"
+                            Value="Small"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -3173,13 +3161,6 @@
       </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
-      <ScreenProperty
-        Name="Contract"
-        PropertyType="Contract">
-        <ScreenProperty.Attributes>
-          <IsParameter />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
       <ScreenCollectionProperty
         Name="ActionItemsSet"
         PageSize="15"
@@ -3540,6 +3521,13 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="Contract"
+        PropertyType="Contract">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

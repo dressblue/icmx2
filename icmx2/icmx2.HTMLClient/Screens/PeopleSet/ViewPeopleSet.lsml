@@ -3603,6 +3603,36 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="LaborCategoryAssignmentsSet1"
+        PageSize="45"
+        PropertyType="CollectionView$LaborCategoryAssignmentsSet">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LaborCategoryAssignmentsSet1Query"
+            ReturnType="LaborCategoryAssignmentsSet*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ViewPeopleSet/Properties[PeopleSet]" />
+                  <MemberExpression
+                    Member="LaborCategoryAssignmentsSet" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ViewPeopleSet/Properties[LaborCategoryAssignmentsSet1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

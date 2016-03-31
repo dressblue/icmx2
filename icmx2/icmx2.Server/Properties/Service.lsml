@@ -33,4 +33,22 @@
         Replacement="$1 $2" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Permission
+    Name="GeneralUse">
+    <Permission.Attributes>
+      <DisplayName
+        Value="General User Population" />
+      <Description
+        Value="Read Access All Forms" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="FullAccess">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Full Access" />
+      <Description
+        Value="Owner Control" />
+    </Permission.Attributes>
+  </Permission>
 </ServiceApplication>

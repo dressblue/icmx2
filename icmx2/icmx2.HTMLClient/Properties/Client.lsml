@@ -36,6 +36,18 @@
         Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:GeneralUse" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:FullAccess" />
+    </Permission.Attributes>
+  </Permission>
   <Application.NavigationItems>
     <ApplicationNavigationMethodLink
       Name="link1"

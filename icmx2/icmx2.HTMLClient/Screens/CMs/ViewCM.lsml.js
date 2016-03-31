@@ -8,3 +8,9 @@ myapp.ViewCM.Details_postRender = function (element, contentItem) {
     });
 }
 
+
+myapp.ViewCM.LaborCategories1_ItemTap_execute = function (screen) {
+    // Write code here.
+    screen.LcatSelected1 = screen.LaborCategories.selectedItem.Id;
+    var lc = screen.LcatSelected1
+};
