@@ -1349,137 +1349,176 @@
           <ContentItem
             Name="LaborCategories"
             Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
             <ContentItem.Attributes>
               <DisplayName
                 Value="Lcat" />
             </ContentItem.Attributes>
             <ContentItem
-              Name="LaborCategories1"
-              Kind="Collection"
-              DataType="CollectionView$LaborCategory"
-              View="Microsoft.LightSwitch.MobileWeb:TileList">
+              Name="Group3"
+              Kind="Group">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="LaborCategories" />
+                  Value="Lcat Selections" />
               </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="ViewCM/Properties[LaborCategories]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
               <ContentItem
-                Name="rows7"
-                Kind="Details"
-                DataType="LaborCategory"
-                View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+                Name="Group2"
+                Kind="Group">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="rows" />
+                    Value="Labor Categories" />
                 </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
                 <ContentItem
-                  Name="Title5"
-                  Kind="Value"
-                  DataType=":String">
+                  Name="LaborCategories1"
+                  Kind="Collection"
+                  DataType="CollectionView$LaborCategory"
+                  View="Microsoft.LightSwitch.MobileWeb:Table">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="LaborCategories" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LaborCategory/Properties[Title]" />
+                          Member="ViewCM/Properties[LaborCategories]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                  <ContentItem
+                    Name="rows7"
+                    Kind="Details"
+                    DataType="LaborCategory"
+                    View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="rows" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Large"
-                            ResultType=":String" />
-                        </ChainExpression>
+                        <ChainExpression />
                       </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Description2"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LaborCategory/Properties[Description]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="Title5"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategory/Properties[Title]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Description2"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategory/Properties[Description]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Rate"
+                      Kind="Value"
+                      DataType=":String?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategory/Properties[Rate]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="LcatSelected"
+                      Kind="Value"
+                      DataType=":Int32">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ViewCM/Properties[LcatSelected]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="LeftAligned"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="FitToContent"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
                       <ScreenExpressionTree>
                         <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Rate"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LaborCategory/Properties[Rate]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="LcatSelected"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ViewCM/Properties[LcatSelected]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="LeftAligned"
-                            ResultType=":String" />
+                          <CallExpression
+                            Target="ViewCM/Methods[LaborCategories1_ItemTap]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ControlPropertySource>
@@ -1487,204 +1526,470 @@
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="FitToContent"
-                          ResultType=":String" />
+                          Value="1100"
+                          ResultType=":Double" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="ViewCM/Methods[LaborCategories1_ItemTap]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
+              <ContentItem
+                Name="Group1"
+                Kind="Group">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Lcat Assignments" />
+                </ContentItem.Attributes>
+                <ContentItem
+                  Name="LcatLookup1"
+                  Kind="Collection"
+                  DataType="CollectionView$LaborCategoryAssignmentsSet"
+                  View="Microsoft.LightSwitch.MobileWeb:Table">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ViewCM/Properties[LcatLookup1]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="LcatLookup1Template"
+                    Kind="Details"
+                    DataType="LaborCategoryAssignmentsSet">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="LaborCategory"
+                      Kind="Details"
+                      DataType="LaborCategory">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Position" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[LaborCategory]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="LaborCategory1"
+                        Kind="Details"
+                        DataType="LaborCategory">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="PeopleSet"
+                      Kind="Details"
+                      DataType="PeopleSet">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Assignee" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[PeopleSet]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="PeopleSet2"
+                        Kind="Details"
+                        DataType="PeopleSet">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="LcatStartDate"
+                      Kind="Value"
+                      DataType=":DateTime?">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Start" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[LcatStartDate]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="LcatEndDate"
+                      Kind="Value"
+                      DataType=":DateTime?">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="End" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[LcatEndDate]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Active2"
+                      Kind="Value"
+                      DataType=":Boolean?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[Active]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ViewCM/Methods[LcatLookup1_ItemTap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="1100"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
             </ContentItem>
             <ContentItem
-              Name="Group1"
+              Name="Group5"
               Kind="Group">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Lcat Expenditures" />
+              </ContentItem.Attributes>
               <ContentItem
-                Name="LcatLookup1"
+                Name="LcatAssignmentLookup"
                 Kind="Collection"
-                DataType="CollectionView$LaborCategoryAssignmentsSet"
+                DataType="CollectionView$LaborDataCollector"
                 View="Microsoft.LightSwitch.MobileWeb:Table">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ViewCM/Properties[LcatLookup1]" />
+                        Member="ViewCM/Properties[LcatAssignmentLookup]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="LcatLookup1Template"
+                  Name="LcatAssignmentLookupTemplate"
                   Kind="Details"
-                  DataType="LaborCategoryAssignmentsSet">
+                  DataType="LaborDataCollector">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="LaborCategory"
-                    Kind="Details"
-                    DataType="LaborCategory">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Position" />
-                    </ContentItem.Attributes>
+                    Name="Hours"
+                    Kind="Value"
+                    DataType=":Decimal?">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="LaborCategoryAssignmentsSet/Properties[LaborCategory]" />
+                            Member="LaborDataCollector/Properties[Hours]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="Small"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                  <ContentItem
+                    Name="DateStart"
+                    Kind="Value"
+                    DataType=":Date?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LaborDataCollector/Properties[DateStart]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="Small"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                  <ContentItem
+                    Name="DateEnd"
+                    Kind="Value"
+                    DataType=":Date?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LaborDataCollector/Properties[DateEnd]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="Small"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Notes1"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LaborDataCollector/Properties[Notes]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="LaborCategoryAssignmentsSet"
+                    Kind="Details"
+                    DataType="LaborCategoryAssignmentsSet"
+                    View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LaborDataCollector/Properties[LaborCategoryAssignmentsSet]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                     <ContentItem
-                      Name="LaborCategory1"
+                      Name="Active1"
+                      Kind="Value"
+                      DataType=":Boolean?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[Active]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      Name="LaborCategory2"
                       Kind="Details"
                       DataType="LaborCategory">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Position" />
+                      </ContentItem.Attributes>
                       <ContentItem.DataSource>
                         <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                        <ScreenExpressionTree>
                           <ChainExpression>
-                            <ConstantExpression
-                              Value="Small"
-                              ResultType=":String" />
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[LaborCategory]" />
                           </ChainExpression>
                         </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
-                  </ContentItem>
-                  <ContentItem
-                    Name="PeopleSet"
-                    Kind="Details"
-                    DataType="PeopleSet">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Assignee" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LaborCategoryAssignmentsSet/Properties[PeopleSet]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="LaborCategory3"
+                        Kind="Details"
+                        DataType="LaborCategory">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
                     <ContentItem
-                      Name="PeopleSet2"
+                      Name="PeopleSet3"
                       Kind="Details"
                       DataType="PeopleSet">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Assignee" />
+                      </ContentItem.Attributes>
                       <ContentItem.DataSource>
                         <ScreenExpressionTree>
-                          <ChainExpression />
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LaborCategoryAssignmentsSet/Properties[PeopleSet]" />
+                          </ChainExpression>
                         </ScreenExpressionTree>
                       </ContentItem.DataSource>
+                      <ContentItem
+                        Name="PeopleSet4"
+                        Kind="Details"
+                        DataType="PeopleSet">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Small"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
                     </ContentItem>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <ConstantExpression
-                              Value="Small"
-                              ResultType=":String" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
-                  </ContentItem>
-                  <ContentItem
-                    Name="LcatStartDate"
-                    Kind="Value"
-                    DataType=":DateTime?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Start" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LaborCategoryAssignmentsSet/Properties[LcatStartDate]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <ConstantExpression
-                              Value="Small"
-                              ResultType=":String" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
-                  </ContentItem>
-                  <ContentItem
-                    Name="LcatEndDate"
-                    Kind="Value"
-                    DataType=":DateTime?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="End" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LaborCategoryAssignmentsSet/Properties[LcatEndDate]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <ConstantExpression
-                              Value="Small"
-                              ResultType=":String" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
                   </ContentItem>
                 </ContentItem>
               </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="1100"
-                        ResultType=":Double" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
@@ -2416,6 +2721,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="LaborCategories1_ItemTap" />
+      <ScreenMethod
+        Name="LcatLookup1_ItemTap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -2869,6 +3176,119 @@
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="LcatAssignmentLookup"
+        PageSize="45"
+        PropertyType="CollectionView$LaborDataCollector">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LcatAssignmentLookupQuery"
+            ReturnType="LaborDataCollector*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="icmData/Members[LcatAssignmentLookup]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ViewCM/Properties[LcatAssignmentLookup]/Query">
+              <ArgumentExpression
+                Parameter="LcatAssignmentLookupKey">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ViewCM/Properties[LcatAssignmentSelected]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="LcatAssignmentSelected"
+        PropertyType=":Int32">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="LaborCategoryAssignmentsSet"
+        PageSize="45"
+        PropertyType="CollectionView$LaborCategoryAssignmentsSet">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LaborCategoryAssignmentsSetQuery"
+            ReturnType="LaborCategoryAssignmentsSet*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LaborCategoryAssignmentsSet/Properties[Active]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean?" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="icmData/Members[LaborCategoryAssignmentsSet]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="LcatAssignmentLookup"
+                ParameterType=":Int32?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ViewCM/Properties[LaborCategoryAssignmentsSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="LaborDataCollectors"
+        PageSize="45"
+        PropertyType="CollectionView$LaborDataCollector">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LaborDataCollectorsQuery"
+            ReturnType="LaborDataCollector*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="icmData/Members[LaborDataCollectors]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ViewCM/Properties[LaborDataCollectors]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
