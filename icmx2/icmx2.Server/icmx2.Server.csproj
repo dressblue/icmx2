@@ -264,6 +264,7 @@
     <LightSwitchModel Include="DataSources\icmData\LcatLookup.lsml">
       <DependentUpon>LaborCategoryAssignmentsSet.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\icmData\qPortfolioExports.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -296,7 +297,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63551/</IISUrl>
+          <IISUrl>http://localhost:49996/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -208,6 +208,9 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
+              <ContentItem
+                Name="ShowAddEditLaborDataCollector"
+                Kind="Command" />
             </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem.PropertySources>

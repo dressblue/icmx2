@@ -63,13 +63,19 @@
             Value="200" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
+      <KeyProperty
         Name="LcatAssignmentKey"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
           <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="LaborCategoryAssignmentsSet"
+        Association="LcatAssignmentKey"
+        FromEnd="LaborDataCollector"
+        ToEnd="LaborCategoryAssignmentsSet" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -91,16 +97,36 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="LcatAssignmentKey" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="LcatAssignmentKey" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Id" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Id" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -119,6 +145,14 @@
             Value="The value of the 'Id' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="LcatAssignmentKey"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'LcatAssignmentKey' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
       Name="LaborDataCollectors_SingleOrDefault"
@@ -131,16 +165,36 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="LcatAssignmentKey" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="LcatAssignmentKey" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Id" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Id" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -157,6 +211,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="LcatAssignmentKey"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'LcatAssignmentKey' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -203,7 +265,7 @@
           Property="LaborDataCollector/Properties[Notes]" />
         <SsdlProperty
           Name="LcatAssignmentKey"
-          Nullable="True"
+          Nullable="False"
           Type="int"
           Property="LaborDataCollector/Properties[LcatAssignmentKey]" />
       </EntitySetMapping.Attributes>
