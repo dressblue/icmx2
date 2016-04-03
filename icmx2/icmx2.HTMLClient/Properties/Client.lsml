@@ -91,5 +91,8 @@
     <ApplicationNavigationMethodLink
       Name="link13"
       Method="!module/Methods[showBrowseFederalAgencies]" />
+    <ApplicationNavigationMethodLink
+      Name="link14"
+      Method="!module/Methods[showBrowseLaborDataCollectors]" />
   </Application.NavigationItems>
 </Application>

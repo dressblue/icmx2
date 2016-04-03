@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="LaborDataCollector">
+    Name="LaborFER">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -63,13 +63,6 @@
             Value="200" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="LcatAssignmentKey"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -78,11 +71,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="LaborDataCollectors"
-      EntityType="LaborDataCollector" />
+      Name="LaborFERS"
+      EntityType="LaborFER" />
     <QueryOperation
-      Name="LaborDataCollectors_Single"
-      ReturnType="LaborDataCollector">
+      Name="LaborFERS_Single"
+      ReturnType="LaborFER">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -108,7 +101,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="LaborDataCollectors" />
+            Member="LaborFERS" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -121,8 +114,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="LaborDataCollectors_SingleOrDefault"
-      ReturnType="LaborDataCollector">
+      Name="LaborFERS_SingleOrDefault"
+      ReturnType="LaborFER">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -148,7 +141,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="LaborDataCollectors" />
+            Member="LaborFERS" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -167,45 +160,40 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="LaborDataCollectors">
+      EntitySet="LaborFERS">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="LaborDataCollector" />
+          Table="LaborFERS" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="LaborDataCollector/Properties[Id]" />
+          Property="LaborFER/Properties[Id]" />
         <SsdlProperty
           Name="Hours"
           Nullable="True"
           Precision="10"
           Scale="2"
           Type="decimal"
-          Property="LaborDataCollector/Properties[Hours]" />
+          Property="LaborFER/Properties[Hours]" />
         <SsdlProperty
           Name="DateStart"
           Nullable="True"
           Type="date"
-          Property="LaborDataCollector/Properties[DateStart]" />
+          Property="LaborFER/Properties[DateStart]" />
         <SsdlProperty
           Name="DateEnd"
           Nullable="True"
           Type="date"
-          Property="LaborDataCollector/Properties[DateEnd]" />
+          Property="LaborFER/Properties[DateEnd]" />
         <SsdlProperty
           MaxLength="200"
           Name="Notes"
           Nullable="True"
           Type="nvarchar"
-          Property="LaborDataCollector/Properties[Notes]" />
-        <SsdlProperty
-          Name="LcatAssignmentKey"
-          Nullable="True"
-          Type="int"
-          Property="LaborDataCollector/Properties[LcatAssignmentKey]" />
+          Property="LaborFER/Properties[Notes]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

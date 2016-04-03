@@ -128,11 +128,6 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="LaborDataCollectors"
-        Association="LcatAssignmentKey"
-        FromEnd="LaborCategoryAssignmentsSet"
-        ToEnd="LaborDataCollector" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -226,32 +221,7 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="LcatAssignmentKey"
-      Association="LcatAssignmentKey">
-      <AssociationSetEnd
-        Name="LaborCategoryAssignmentsSet"
-        EntitySet="LaborCategoryAssignmentsSet" />
-      <AssociationSetEnd
-        Name="LaborDataCollector"
-        EntitySet="LaborDataCollectors" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="LcatAssignmentKey">
-    <AssociationEnd
-      Name="LaborCategoryAssignmentsSet"
-      Multiplicity="One"
-      EntityType="LaborCategoryAssignmentsSet">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="LaborDataCollector"
-      Multiplicity="Many"
-      EntityType="LaborDataCollector" />
-  </Association>
   <DataService
     Name="icmDataDataService">
     <DataService.Attributes>
@@ -335,26 +305,5 @@
           PropertyName="LaborCategoryAssignments_People" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="LcatAssignmentKey">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="LcatAssignmentKey" />
-        <SsdlAssociationSetEnd
-          End="icmData/Members[LcatAssignmentKey]/Members[LaborCategoryAssignmentsSet]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="icmData/Members[LcatAssignmentKey]/Members[LaborDataCollector]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="LcatAssignmentKey" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

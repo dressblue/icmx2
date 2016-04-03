@@ -265,6 +265,7 @@
       <DependentUpon>LaborCategoryAssignmentsSet.lsml</DependentUpon>
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\icmData\qPortfolioExports.lsml" />
+    <LightSwitchModel Include="DataSources\icmData\LaborFERS.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

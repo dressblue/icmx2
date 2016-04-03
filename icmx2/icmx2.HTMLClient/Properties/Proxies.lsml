@@ -604,16 +604,10 @@
         Target="ServiceInterface:qPortfolioExport" />
     </EntityType.Attributes>
   </EntityType>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:LcatAssignmentKey" />
-    </Association.Attributes>
-  </Association>
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:LaborDataCollector" />
+        Target="ServiceInterface:LaborFER" />
     </EntityType.Attributes>
   </EntityType>
 </Application>

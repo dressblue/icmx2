@@ -93,6 +93,9 @@
     <Content Include="Screens\LaborCategoryAssignmentsSet\ViewLaborCategoryAssignmentsSet.lsml.js">
       <DependentUpon>ViewLaborCategoryAssignmentsSet.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\LaborDataCollectors\ViewLaborDataCollector.lsml.js">
+      <DependentUpon>ViewLaborDataCollector.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\OpportunityStatus\ViewOpportunityStatu.lsml.js">
       <DependentUpon>ViewOpportunityStatu.lsml</DependentUpon>
     </Content>
@@ -139,6 +142,7 @@
     <LightSwitchModel Include="Properties\icmData\FederalAgencies.lsml" />
     <LightSwitchModel Include="Properties\icmData\LaborCategories.lsml" />
     <LightSwitchModel Include="Properties\icmData\LaborCategoryAssignmentsSet.lsml" />
+    <LightSwitchModel Include="Properties\icmData\LaborDataCollectors.lsml" />
     <LightSwitchModel Include="Properties\icmData\OpportunityStatus.lsml" />
     <LightSwitchModel Include="Properties\icmData\PayeeAssignments.lsml" />
     <LightSwitchModel Include="Properties\icmData\Payees.lsml" />
@@ -170,6 +174,9 @@
     <LightSwitchModel Include="Screens\LaborCategoryAssignmentsSet\AddEditLaborCategoryAssignmentsSet.lsml" />
     <LightSwitchModel Include="Screens\LaborCategoryAssignmentsSet\BrowseLaborCategoryAssignmentsSet.lsml" />
     <LightSwitchModel Include="Screens\LaborCategoryAssignmentsSet\ViewLaborCategoryAssignmentsSet.lsml" />
+    <LightSwitchModel Include="Screens\LaborDataCollectors\AddEditLaborDataCollector.lsml" />
+    <LightSwitchModel Include="Screens\LaborDataCollectors\BrowseLaborDataCollectors.lsml" />
+    <LightSwitchModel Include="Screens\LaborDataCollectors\ViewLaborDataCollector.lsml" />
     <LightSwitchModel Include="Screens\OpportunityStatus\AddEditOpportunityStatu.lsml" />
     <LightSwitchModel Include="Screens\OpportunityStatus\BrowseOpportunityStatus.lsml" />
     <LightSwitchModel Include="Screens\OpportunityStatus\ViewOpportunityStatu.lsml" />
